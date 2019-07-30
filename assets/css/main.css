@@ -1,0 +1,80 @@
+html {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #f1f7fb;
+    font-size: 0.9em;
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.6em;
+    letter-spacing: 0.08em;
+    line-break: strict;
+    color: #95aade;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #83d231;
+}
+
+a:hover {
+    color: #3a8008;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    padding-left: 25px;
+}
+
+address {
+    font-style: normal;
+}
+
+.container {
+    max-width: 500px;
+    min-height: 100%;
+    padding: 1rem 2rem;
+    margin: 2rem auto;
+    background-color: #edf2fb;
+}
+
+.header {
+    padding: 3rem 0 3rem;
+    text-align: center;
+}
+
+.logo {
+    margin: 0;
+}
+
+.main-image {
+    margin: 8rem 0 5rem;
+}
+
+.section {
+    margin: 0 0 2.5rem;
+}
+
+.section h2 {
+    font-family: 'Dosis', sans-serif;
+}
+
+.footer {
+    margin: 3rem 0 1rem;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+@media (max-width: 576px) {
+    .container {
+        margin: 0 auto;
+        padding: 0.5rem 1.5rem;
+    }
+}

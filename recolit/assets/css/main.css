@@ -1,0 +1,131 @@
+html {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #1c1d3f url(../image/background.png) repeat-x top;
+    background-size: 622px;
+    font-size: 0.9em;
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.6em;
+    letter-spacing: 0.08em;
+    line-break: strict;
+    color: #fff0b4;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #78b2ff;
+}
+
+a:hover {
+    color: #e2efff;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    padding-left: 25px;
+}
+
+address {
+    font-style: normal;
+}
+
+.container {
+    max-width: 800px;
+    padding: 0 2rem;
+    margin: 0 auto;
+}
+
+.header {
+    margin: 7rem 0 3rem;
+    text-align: center;
+}
+
+.logo {
+    margin: 0;
+}
+
+.main-image {
+    margin: 8rem 0 5rem;
+}
+
+.about {
+    padding: 0 3rem;
+    color: #ffd758;
+}
+
+.section {
+    margin: 0 0 2.5rem;
+}
+
+.section h2 {
+    font-family: 'Palanquin Dark';
+    font-size: 1.7em;
+    width: 12rem;
+    margin-left: -1rem;
+    padding: 0.5rem 0.9rem 0.6rem;
+    border-radius: 1.2rem;
+    background-color: #0c0c22;
+}
+
+.section.notice h2 {
+    background-color: #987815;
+}
+
+.section.updates article {
+    margin-bottom: 0.3rem;
+}
+
+.section.updates article h3,
+.section.updates article p {
+    display: inline;
+    font-size: 1em;
+}
+
+.footer {
+    margin: 3rem 0 1rem;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.screenshots {
+    list-style: none;
+    line-height: 0;
+    padding: 0;
+    margin: 0 0 -1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.screenshots li {
+    width: 32%;
+    margin-bottom: 1rem;
+}
+
+.screenshots li img {
+    width: 100%;
+}
+
+@media (max-width: 576px) {
+    .about {
+        padding: 0 1rem;
+    }
+    .container {
+        padding: 0 1.5rem;
+    }
+    .section h2 {
+        margin-left: -0.2em;
+    }
+    .screenshots li {
+        width: 48%;
+    }
+}
