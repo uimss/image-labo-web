@@ -38,15 +38,15 @@ address {
 }
 
 .container {
-    max-width: 500px;
+    max-width: 700px;
     min-height: 100%;
-    padding: 1rem 2rem;
+    padding: 2rem;
     margin: 2rem auto;
     background-color: #edf2fb;
 }
 
 .header {
-    padding: 3rem 0 3rem;
+    padding: 2rem 0;
     text-align: center;
 }
 
@@ -55,7 +55,7 @@ address {
 }
 
 .main-image {
-    margin: 8rem 0 5rem;
+    margin: 0 0 1.5rem;
 }
 
 .section {
@@ -67,7 +67,7 @@ address {
 }
 
 .footer {
-    margin: 3rem 0 1rem;
+    margin: 3rem 0 0;
     text-align: center;
     font-size: 0.8em;
 }
