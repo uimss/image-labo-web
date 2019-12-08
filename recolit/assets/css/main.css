@@ -62,22 +62,6 @@ address {
     padding: 0 3rem;
 }
 
-.trailer {
-    text-align: center;
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-}
-
-.trailer iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
 .section_wrapper {
     padding: 2.5rem 0;
     background-color: #1a1b3c;
@@ -106,6 +90,22 @@ address {
 
 .section.notice h2 {
     background-color: #987815;
+}
+
+.section.trailer .content {
+    text-align: center;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.section.trailer .content iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .section.updates article {
@@ -145,8 +145,11 @@ address {
 
 @media (max-width: 800px) {
     .about {
-        padding: 0 3rem;
+        padding: 0 2rem;
         text-align: left;
+    }
+    .br-hide-sp {
+        display: none;
     }
 }
 
