@@ -40,7 +40,7 @@ address {
 }
 
 .header {
-    margin: 7rem 0 3rem;
+    margin: 0 0 3rem;
     text-align: center;
 }
 
@@ -51,11 +51,11 @@ address {
 }
 
 .logo {
-    margin: 0;
+    margin: 3rem 0 7rem;
 }
 
 .main-image {
-    margin: 8rem 0 5rem;
+    margin: 0;
 }
 
 .about {
