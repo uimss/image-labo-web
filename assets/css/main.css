@@ -5,7 +5,6 @@ html {
 }
 
 body {
-    background: #f1f7fb;
     font-size: 0.9em;
     font-family: 'Noto Sans JP', sans-serif;
     line-height: 1.6em;
@@ -30,10 +29,12 @@ img {
 }
 
 ul {
-    padding-left: 25px;
+    padding-left: 0px;
+    list-style: none;
 }
 
 address {
+    display: inline;
     font-style: normal;
 }
 
