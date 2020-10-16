@@ -36,6 +36,7 @@ ul {
 }
 
 address {
+    display: inline;
     font-style: normal;
 }
 
