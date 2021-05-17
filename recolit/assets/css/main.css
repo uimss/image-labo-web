@@ -49,6 +49,16 @@ address {
     position: absolute;
     top: 1rem;
     right: 1rem;
+    display: flex;
+    margin: 0 -0.4rem;
+}
+
+.navigation > div {
+    margin: 0 0.4rem;
+}
+
+.navigation .localization {
+    margin: -0.3rem 0.4rem 0;
 }
 
 .logo {
