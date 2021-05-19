@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&family=Noto+Sans+JP:wght@400;700&family=Palanquin+Dark&display=swap');
+
 html {
     box-sizing: border-box;
     padding: 0;
@@ -5,11 +7,12 @@ html {
 }
 
 body {
-    background: #0b0e25 url(../image/background.png) repeat-x top;
+    background: #111a3e url(../image/background.png) repeat-x top;
     background-size: 622px;
+    background-attachment: fixed;
     font-size: 0.95em;
     font-family: 'Noto Sans JP', sans-serif;
-    line-height: 1.8em;
+    line-height: 2em;
     letter-spacing: 0.08em;
     line-break: strict;
     color: #ffd758;
@@ -20,6 +23,7 @@ body {
 a {
     text-decoration: none;
     color: #78b2ff;
+    font-weight: bold;
 }
 
 a:hover {
@@ -41,7 +45,7 @@ address {
 }
 
 .header {
-    margin: 0 0 3rem;
+    margin: 0 0 5rem;
     text-align: center;
 }
 
@@ -73,20 +77,25 @@ address {
     padding: 0 3rem;
 }
 
+.about .copy {
+    font-size: 1.1em;
+    font-family: 'Kiwi Maru', serif;
+}
+
 .section_wrapper {
     padding: 2.5rem 0;
-    background-color: #1a1b3c;
+    background-color: #0e102f;
 }
 
 .section_wrapper:nth-child(odd) {
-    background-color: #0c0c22;
+    background: #111a3e60;
 }
 
 .section {
-    /* margin: 0 0 4rem; */
     max-width: 1000px;
     padding: 0 2rem;
     margin: 0 auto;
+    text-align: center;
 }
 
 .section h2 {
@@ -94,13 +103,23 @@ address {
     font-family: 'Palanquin Dark';
     font-size: 2em;
     margin: 0 0 2.2rem;
-    padding: 0.7rem 1.2rem 0.8rem;
+    padding: 1rem 1.5rem 1.2rem;
     border-radius: 2rem;
-    background-color: #3c310b;
+    background-color: #5f4c18;
 }
 
 .section.notice h2 {
     background-color: #987815;
+}
+
+.section .content ul {
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+    word-wrap: break-word;
+    max-width: 100%;
+    list-style: none;
+    padding-left: 0;
 }
 
 .section.trailer .content {
@@ -130,7 +149,7 @@ address {
 }
 
 .footer {
-    margin: 3rem 0 1rem;
+    margin: 4rem 0 1rem;
     text-align: center;
     font-size: 0.8em;
 }
@@ -170,8 +189,18 @@ address {
 }
 
 @media (max-width: 576px) {
+    body {
+        font-size: 0.9em;
+    }
+    .section h2 {
+        font-size: 1.7em;
+        padding: 0.8rem 1.3rem 0.9rem;
+    }
     .logo {
         padding: 0 3rem;
+    }
+    .about {
+        padding: 0 1.5rem;
     }
     .section {
         padding: 0 1.5rem;
