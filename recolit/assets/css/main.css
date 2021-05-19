@@ -51,18 +51,18 @@ address {
 
 .navigation {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 1.5rem;
+    right: 1.5rem;
     display: flex;
-    margin: 0 -0.4rem;
+    margin: 0 -0.5rem;
 }
 
 .navigation > div {
-    margin: 0 0.4rem;
+    margin: 0 0.5rem;
 }
 
 .navigation .localization {
-    margin: -0.3rem 0.4rem 0;
+    margin: -0.3rem 0.5rem 0;
 }
 
 .logo {
@@ -80,6 +80,7 @@ address {
 .about .copy {
     font-size: 1.1em;
     font-family: 'Kiwi Maru', serif;
+    margin: 0 0 4.5rem;
 }
 
 .section_wrapper {
@@ -106,6 +107,7 @@ address {
     padding: 1rem 1.5rem 1.2rem;
     border-radius: 2rem;
     background-color: #5f4c18;
+    letter-spacing: 0.11em;
 }
 
 .section.notice h2 {
@@ -178,34 +180,55 @@ address {
     transition: 0.3s;
 }
 
+.br-show-sp {
+    display: none;
+}
+
 @media (max-width: 800px) {
     .about {
         padding: 0 2rem;
-        text-align: left;
+        /* text-align: left; */
     }
-    .br-hide-sp {
+    .br-hide-mp {
         display: none;
     }
 }
 
 @media (max-width: 576px) {
     body {
-        font-size: 0.9em;
+        font-size: 0.85em;
+    }
+    .navigation {
+        top: 1.3rem;
+        right: 1.3rem;
+    }
+    .header {
+        margin: 0 0 4rem;
     }
     .section h2 {
         font-size: 1.7em;
         padding: 0.8rem 1.3rem 0.9rem;
     }
+    .main-image {
+        width: 70%;
+    }
     .logo {
-        padding: 0 3rem;
+        padding: 0 3.5rem;
+        margin: 3rem 0 5rem;
     }
     .about {
-        padding: 0 1.5rem;
+        padding: 0 1.3rem;
+    }
+    .about .copy {
+        margin: 0 0 4rem;
     }
     .section {
-        padding: 0 1.5rem;
+        padding: 0 1.3rem;
     }
     .screenshots li {
         width: 48%;
+    }
+    .br-show-sp {
+        display: initial;
     }
 }
