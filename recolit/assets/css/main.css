@@ -92,12 +92,35 @@ address {
 }
 
 .section_wrapper {
-    padding: 4rem 0;
-    background-color: #0e102f;
+    padding: 4.5rem 0;
+    background: transparent;
 }
 
-.section_wrapper:nth-child(odd) {
-    background: transparent;
+.section_wrapper:nth-child(even) {
+    padding: 4rem 0;
+    background-color: #0e102f;
+    position: relative;
+}
+
+.section_wrapper:nth-child(even)::before {
+    content: " ";
+    position: absolute;
+    top: -20px;
+    height: 20px;
+    width: 100%;
+    background: url(../image/section_line.png) repeat-x;
+    background-size: 20px;
+}
+
+.section_wrapper:nth-child(even)::after {
+    content: " ";
+    position: absolute;
+    bottom: -20px;
+    height: 20px;
+    width: 100%;
+    background: url(../image/section_line.png) repeat-x;
+    background-size: 20px;
+    transform: rotateZ(180deg);
 }
 
 .section {
