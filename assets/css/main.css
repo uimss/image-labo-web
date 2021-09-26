@@ -104,6 +104,14 @@ section.links {
   line-height: 2rem;
 }
 
+section.links ul {
+  padding-bottom: 1.5rem;
+}
+
+section.links ul:last-child {
+  padding-bottom: 0;
+}
+
 section.profile {
   text-align: center;
   border-top: 1px solid #83a1ea;

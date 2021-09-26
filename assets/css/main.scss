@@ -56,6 +56,7 @@ address {
 header {
     padding: 1rem 0;
     text-align: center;
+
     .logo {
         margin: 0;
     }
@@ -83,16 +84,26 @@ section {
     padding: 1.5rem 0;
 }
 
-section.notice p {
-    margin: 0;
-}
+section.notice {
+    p {
+        margin: 0;
+    }
 
-section.notice img {
-    box-shadow: 0 0 4px 4px rgba(50,80,150,0.05);
+    img {
+        box-shadow: 0 0 4px 4px rgba(50, 80, 150, 0.05);
+    }
 }
 
 section.links {
     line-height: 2rem;
+
+    ul {
+        padding-bottom: 1.5rem;
+    }
+
+    ul:last-child {
+        padding-bottom: 0;
+    }
 }
 
 section.profile {
@@ -151,9 +162,11 @@ footer {
         flex-basis: 100%;
     }
 
-    section.notice img {
-        max-width: calc(100% + 2rem);
-        margin: 0 -1rem;
+    section.notice {
+        img {
+            max-width: calc(100% + 2rem);
+            margin: 0 -1rem;
+        }
     }
 
     section.profile {
