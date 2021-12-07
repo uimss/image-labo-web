@@ -38,6 +38,10 @@ ul {
   margin: 0;
 }
 
+ul.disc {
+  list-style: disc inside;
+}
+
 address {
   display: inline;
   font-style: normal;
@@ -45,13 +49,6 @@ address {
 
 .wrapper {
   padding: 3rem 0 2rem;
-}
-
-.container {
-  max-width: 700px;
-  min-height: 100%;
-  padding: 0 1rem;
-  margin: 0 auto;
 }
 
 header {
@@ -70,7 +67,6 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 0 auto;
   gap: 0 3rem;
   padding: 0 1rem;
 }
@@ -177,3 +173,12 @@ footer {
   }
 }
 /*# sourceMappingURL=main.css.map */
+
+.sub header img {
+  width: 150px;
+}
+
+.sub .content {
+  max-width: 700px;
+  flex-basis: 100%;
+}
