@@ -91,14 +91,20 @@ section.notice {
 
     img {
         box-shadow: 0 0 4px 4px rgba(50, 80, 150, 0.05);
+        border-radius: 0.5rem;
     }
 }
 
 section.links {
-    line-height: 2rem;
+
+    h2 {
+        margin-top: 0;
+        line-height: 1;
+    }
 
     ul {
-        padding-bottom: 1.5rem;
+        padding-bottom: 3rem;
+        line-height: 2.2rem;
     }
 
     ul:last-child {
@@ -111,10 +117,10 @@ section.profile {
     border-top: 1px solid #83a1ea;
     margin: 0 auto;
     margin-top: 1.5rem;
-    padding-top: 2rem;
+    padding-top: 2.5rem;
 
     ul {
-        padding-top: 1.5rem;
+        padding-top: 2rem;
     }
 
     li {
@@ -126,8 +132,9 @@ section.profile {
     }
 
     .profile-name {
+        font-size: 1.1rem;
         font-weight: bold;
-        margin: 0.7rem 0 0;
+        margin: 0.7rem 0 0.3rem;
     }
 
     .profile-icon {
@@ -166,6 +173,7 @@ footer {
         img {
             max-width: calc(100% + 2rem);
             margin: 0 -1rem;
+            border-radius: 0;
         }
     }
 

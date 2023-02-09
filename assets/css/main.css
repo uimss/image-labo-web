@@ -1,13 +1,12 @@
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
 body {
   font-size: 0.95em;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   line-height: 1.8em;
   letter-spacing: 0.08em;
   line-break: strict;
@@ -38,10 +37,6 @@ ul {
   margin: 0;
 }
 
-ul.disc {
-  list-style: disc inside;
-}
-
 address {
   display: inline;
   font-style: normal;
@@ -51,36 +46,37 @@ address {
   padding: 3rem 0 2rem;
 }
 
+.container {
+  max-width: 700px;
+  min-height: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
 header {
   padding: 1rem 0;
   text-align: center;
 }
-
 header .logo {
   margin: 0;
 }
 
 main {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
+  margin: 0 auto;
   gap: 0 3rem;
   padding: 0 1rem;
 }
 
 .left-side {
   max-width: 700px;
-  -ms-flex-preferred-size: 60%;
-      flex-basis: 60%;
+  flex-basis: 60%;
 }
 
 .right-side {
   max-width: 450px;
-  -ms-flex-preferred-size: 40%;
-      flex-basis: 40%;
+  flex-basis: 40%;
 }
 
 section {
@@ -90,20 +86,19 @@ section {
 section.notice p {
   margin: 0;
 }
-
 section.notice img {
-  -webkit-box-shadow: 0 0 4px 4px rgba(50, 80, 150, 0.05);
-          box-shadow: 0 0 4px 4px rgba(50, 80, 150, 0.05);
+  box-shadow: 0 0 4px 4px rgba(50, 80, 150, 0.05);
+  border-radius: 0.5rem;
 }
 
-section.links {
-  line-height: 2rem;
+section.links h2 {
+  margin-top: 0;
+  line-height: 1;
 }
-
 section.links ul {
-  padding-bottom: 1.5rem;
+  padding-bottom: 3rem;
+  line-height: 2.2rem;
 }
-
 section.links ul:last-child {
   padding-bottom: 0;
 }
@@ -113,26 +108,22 @@ section.profile {
   border-top: 1px solid #83a1ea;
   margin: 0 auto;
   margin-top: 1.5rem;
+  padding-top: 2.5rem;
+}
+section.profile ul {
   padding-top: 2rem;
 }
-
-section.profile ul {
-  padding-top: 1.5rem;
-}
-
 section.profile li {
   padding-bottom: 1rem;
 }
-
 section.profile li:last-child {
   padding-bottom: 0;
 }
-
 section.profile .profile-name {
+  font-size: 1.1rem;
   font-weight: bold;
-  margin: 0.7rem 0 0;
+  margin: 0.7rem 0 0.3rem;
 }
-
 section.profile .profile-icon {
   max-width: 70px;
   border-radius: 50%;
@@ -149,10 +140,7 @@ footer {
     padding: 2.5rem 0 2rem;
   }
   main {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
   .left-side {
     max-width: none;
@@ -161,24 +149,14 @@ footer {
   .right-side {
     max-width: none;
     width: 100%;
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    flex-basis: 100%;
   }
   section.notice img {
     max-width: calc(100% + 2rem);
     margin: 0 -1rem;
+    border-radius: 0;
   }
   section.profile {
     max-width: 400px;
   }
-}
-/*# sourceMappingURL=main.css.map */
-
-.sub header img {
-  width: 150px;
-}
-
-.sub .content {
-  max-width: 700px;
-  flex-basis: 100%;
-}
+}/*# sourceMappingURL=main.css.map */
