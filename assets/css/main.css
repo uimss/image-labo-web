@@ -66,7 +66,7 @@ main {
   justify-content: center;
   margin: 0 auto;
   gap: 0 3rem;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
 .left-side {
@@ -76,6 +76,7 @@ main {
 
 .right-side {
   max-width: 450px;
+  min-width: 300px;
   flex-basis: 40%;
 }
 
@@ -141,6 +142,7 @@ footer {
   }
   main {
     flex-direction: column;
+    padding: 0 1.3rem;
   }
   .left-side {
     max-width: none;
@@ -150,11 +152,6 @@ footer {
     max-width: none;
     width: 100%;
     flex-basis: 100%;
-  }
-  section.notice img {
-    max-width: calc(100% + 2rem);
-    margin: 0 -1rem;
-    border-radius: 0;
   }
   section.profile {
     max-width: 400px;
