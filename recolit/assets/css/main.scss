@@ -204,7 +204,7 @@ address {
     font-size: 0.8em;
 }
 
-.screenshots {
+.content_screenshots {
     list-style: none;
     line-height: 0;
     padding: 0;
@@ -228,11 +228,33 @@ address {
     }
 }
 
-.credits {
+.content_credits {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
+
+.content_support {
+    margin: 0 auto;
+    text-align: left;
+    max-width: 600px;
+    h3 {
+        font-size: 1.2rem;
+        // background-color: #202c5b;
+        width: fit-content;
+        // padding: 0.5rem 1.2rem;
+        border-radius: 99rem;
+        &::before {
+            content: "●";
+            color: #202c5b;
+            margin-right: 0.5rem;
+        }
+    }
+    h4 {
+        margin-bottom: 0;
+    }
+}
+
 
 .br-show-sp {
     display: none;
@@ -281,10 +303,10 @@ address {
     .section {
         padding: 0 1.3rem;
     }
-    .section.trailer .content {
+    .content_trailer {
         margin: 0 -1.3rem;
     }
-    .screenshots li {
+    .content_screenshots li {
         width: 48%;
     }
     .br-show-sp {
