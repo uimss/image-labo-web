@@ -15,14 +15,14 @@ body {
   line-height: 2em;
   letter-spacing: 0.08em;
   line-break: strict;
-  color: #c1d2ff;
+  color: #8caeff;
   padding: 0;
   margin: 0;
 }
 
 a {
   text-decoration: none;
-  color: #c1d2ff;
+  color: #8caeff;
   font-weight: bold;
 }
 
@@ -35,7 +35,7 @@ img {
 }
 
 ul {
-  padding-left: 25px;
+  padding-left: 1rem;
   margin: 0;
 }
 
@@ -44,11 +44,22 @@ address {
   font-style: normal;
 }
 
+small {
+  line-height: 1;
+}
+
 .header {
   margin: 0 0 5rem;
   text-align: center;
   background: url(../image/item.png) no-repeat top;
   background-size: 928.5px;
+}
+.header.header_simple {
+  background: none;
+}
+.header.header_simple .logo {
+  margin: 4rem auto;
+  width: 300px;
 }
 
 .navigation {
@@ -144,12 +155,98 @@ address {
   color: #202c5b;
   font-size: 20px;
 }
-.section .content ul {
+.section.section_screenshots ul {
+  list-style: none;
+  line-height: 0;
+  padding: 0;
+  margin: 0 0 -1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.section.section_screenshots ul li {
+  width: 32%;
+  margin-bottom: 1rem;
+}
+.section.section_screenshots ul li img {
+  width: 100%;
+}
+.section.section_screenshots ul li img:hover {
+  filter: brightness(1.3);
+  transition: 0.3s;
+}
+.section.section_credits .content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.section.section_credits .content ul {
   margin: 0 auto;
   word-wrap: break-word;
   max-width: 100%;
   list-style: none;
   padding-left: 0;
+}
+.section.section_support .content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 1.8em;
+}
+.section.section_support h3 {
+  display: inline-block;
+  margin: 0;
+  margin-left: 0.2rem;
+  font-size: 1.2rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 99rem;
+}
+.section.section_support h4 {
+  font-size: 1.1rem;
+}
+.section.section_support details {
+  margin-bottom: 1rem;
+}
+.section.section_support details > div {
+  margin: 1.8rem 0;
+}
+.section.section_support small {
+  color: #39518a;
+}
+.section.section_support details.heading {
+  margin-bottom: 1.8rem;
+}
+.section.section_support details.heading > summary {
+  background-color: #202d5b;
+  border-radius: 99rem;
+  padding: 0.5rem 1.2rem;
+}
+.section.section_support details.heading > summary::marker {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+.section.section_support .info-text {
+  background-color: #202c5b;
+  border-radius: 10px;
+  padding: 0.5rem 0.8rem;
+  margin: 0.5rem 0;
+}
+
+ul.list-inline {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+ul.list-inline li::before {
+  content: "/";
+  padding: 0 0.5rem;
+}
+ul.list-inline li:first-child::before {
+  content: none;
 }
 
 .store-embed {
@@ -172,15 +269,6 @@ address {
   height: 100%;
 }
 
-.section.updates article {
-  margin-bottom: 0.3rem;
-}
-.section.updates article h3,
-.section.updates article p {
-  display: inline;
-  font-size: 1em;
-}
-
 .yokaze-logo {
   display: inline-block;
   width: 250px;
@@ -190,53 +278,6 @@ address {
   margin: 4rem 0 1rem;
   text-align: center;
   font-size: 0.8em;
-}
-
-.content_screenshots {
-  list-style: none;
-  line-height: 0;
-  padding: 0;
-  margin: 0 0 -1rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.content_screenshots li {
-  width: 32%;
-  margin-bottom: 1rem;
-}
-.content_screenshots li img {
-  width: 100%;
-}
-.content_screenshots li img:hover {
-  filter: brightness(1.3);
-  transition: 0.3s;
-}
-
-.content_credits {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.content_support {
-  margin: 0 auto;
-  text-align: left;
-  max-width: 600px;
-}
-.content_support h3 {
-  font-size: 1.2rem;
-  width: -moz-fit-content;
-  width: fit-content;
-  border-radius: 99rem;
-}
-.content_support h3::before {
-  content: "●";
-  color: #202c5b;
-  margin-right: 0.5rem;
-}
-.content_support h4 {
-  margin-bottom: 0;
 }
 
 .br-show-sp {
@@ -256,17 +297,9 @@ address {
     font-size: 0.85em;
     background-size: 930px;
   }
-  .navigation {
-    top: 1.3rem;
-    right: 1.3rem;
-  }
   .header {
     margin: 0 0 4rem;
     background-size: 464.25px;
-  }
-  .section h2 {
-    font-size: 1.7em;
-    padding: 0.8rem 1.3rem 0.9rem;
   }
   .main-image {
     width: 70%;
@@ -283,12 +316,17 @@ address {
     margin: 0 0 4rem;
   }
   .section {
-    padding: 0 1.3rem;
+    padding: 0 1.5rem;
   }
-  .content_trailer {
-    margin: 0 -1.3rem;
+  .section h2 {
+    font-size: 1.7em;
+    padding: 0.8rem 1.5rem 0.9rem;
   }
-  .content_screenshots li {
+  .section.section_trailer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .section.section_screenshots li {
     width: 48%;
   }
   .br-show-sp {
