@@ -355,8 +355,11 @@ ul.list-inline {
             padding-right: 0;
             padding-left: 0;
         }
-        &.section_screenshots li {
+        &.section_screenshots ul li {
             width: 48%;
+        }
+        &.section_screenshots ul li:nth-of-type(n + 9) {
+            display: none;
         }
     }
     .br-show-sp {
