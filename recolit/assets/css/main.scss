@@ -192,6 +192,26 @@ small {
         }
     }
 
+    &.section_store {
+        .ost {
+            padding: 1.5rem 0 0;
+            h3 {
+                font-size: 1.4rem;
+                position: relative;
+                display: inline-block;
+                font-family: 'Palanquin Dark';
+                padding: 0.8rem 1.5rem 1rem;
+                border-radius: 2rem;
+                background-color: #202c5b;
+                letter-spacing: 0.11em;
+            }
+            img {
+                width: 340px;
+                // max-width: 340px;
+            }
+        }
+    }
+
     &.section_credits {
         .content {
             display: flex;
@@ -355,12 +375,12 @@ ul.list-inline {
             padding-right: 0;
             padding-left: 0;
         }
-        &.section_screenshots ul li {
-            width: 48%;
-        }
-        &.section_screenshots ul li:nth-of-type(n + 9) {
-            display: none;
-        }
+        // &.section_screenshots ul li {
+        //     width: 48%;
+        // }
+        // &.section_screenshots ul li:nth-of-type(n + 9) {
+        //     display: none;
+        // }
     }
     .br-show-sp {
         display: initial;
