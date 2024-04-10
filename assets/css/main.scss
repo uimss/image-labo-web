@@ -69,16 +69,17 @@ main {
     margin: 0 auto;
     gap: 0 3rem;
     padding: 0 2rem;
-    max-width: 1100px;
+    max-width: 1000px;
 }
 
 .left-side {
-    flex-basis: 60%;
+    min-width: 300px;
+    flex-basis: 35%;
 }
 
 .right-side {
-    min-width: 300px;
-    flex-basis: 40%;
+    flex-basis: 65%;
+    order: 2;
 }
 
 section {
@@ -105,7 +106,7 @@ section.links {
 
     ul {
         padding-bottom: 3rem;
-        line-height: 2.2rem;
+        line-height: 2.1rem;
     }
 
     ul:last-child {
@@ -173,10 +174,14 @@ footer {
         max-width: none;
         width: 100%;
         flex-basis: 100%;
+        order: 0;
     }
 }
 
 @media (max-width: 520px) {
+    .logo svg {
+        width: 250px;
+    }
     main {
         padding: 0 1.3rem;
     }
