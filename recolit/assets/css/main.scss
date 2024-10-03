@@ -50,7 +50,6 @@ small {
 }
 
 .header {
-    margin: 0 0 5rem;
     text-align: center;
     background: url(../image/item.png) no-repeat top;
     background-size: 928.5px;
@@ -87,12 +86,12 @@ small {
 
 
 .logo {
-    margin: 3rem auto 7rem;
+    margin: 2rem auto 6rem;
     width: 450px;
 }
 
 .main-image {
-    margin-top: -3rem;
+    margin-top: -4rem;
     width: 350px;
 }
 
@@ -106,12 +105,71 @@ small {
     margin: 0 0 4.5rem;
 }
 
+ul.store-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    gap: 1rem;
+
+    li > a {
+        display: inline-block;
+        background-color: #8caeff;
+        color: #202c5b;
+        padding: 0.6rem 1.6rem;
+        border-radius: 99rem;
+
+        &:hover {
+            background-color: #7898e4;
+        }
+
+        &.switch {
+            background-color: #e22c2c;
+            color: white;
+            &:hover {
+                background-color: #cf2424;
+            }
+        }
+
+        &.steam {
+            background-color: #225f85;
+            color: white;
+            &:hover {
+                background-color: #1a4f70;
+            }
+        }
+    }
+}
+
+.store-switch {
+    margin: 2rem 0;
+    // & > * {
+    //     margin-bottom: 1.4rem;
+    // }
+
+    .package-info {
+        .package-info-detail {
+            margin: 2rem 0;
+        }
+        .list-inline {
+            font-size: 0.9rem;
+        }
+    }
+
+    .package-image {
+        display: block;
+        width: 600px;
+        margin: 0 auto 1.4rem;
+    }
+}
+
 .section_wrapper {
-    padding: 4.5rem 0;
+    padding: 3rem 0;
     background: transparent;
 
     &:nth-child(even) {
-        padding: 4rem 0;
         background-color: #0e102f;
         position: relative;
 
@@ -149,7 +207,7 @@ small {
         display: inline-block;
         font-family: 'Palanquin Dark';
         font-size: 2em;
-        margin: 0 0 3rem;
+        margin: 0 0 2.6rem;
         padding: 1rem 1.7rem 1.2rem;
         border-radius: 2rem;
         color: #FFB860;
@@ -165,6 +223,18 @@ small {
             color: #202c5b;
             font-size: 20px;
         }
+    }
+
+    h3 {
+        position: relative;
+        display: inline-block;
+        font-size: 1.4rem;
+        margin: 0 0 1.4rem;
+        font-family: 'Palanquin Dark';
+        padding: 0.8rem 1.5rem 1rem;
+        border-radius: 2rem;
+        background-color: #202c5b;
+        letter-spacing: 0.11em;
     }
 
     &.section_screenshots {
@@ -195,17 +265,7 @@ small {
 
     &.section_store {
         .ost {
-            padding: 1.5rem 0 0;
-            h3 {
-                font-size: 1.4rem;
-                position: relative;
-                display: inline-block;
-                font-family: 'Palanquin Dark';
-                padding: 0.8rem 1.5rem 1rem;
-                border-radius: 2rem;
-                background-color: #202c5b;
-                letter-spacing: 0.11em;
-            }
+            padding: 2.5rem 0 0;
             img {
                 width: 340px;
                 // max-width: 340px;
@@ -243,6 +303,8 @@ small {
             font-size: 1.2rem;
             width: fit-content;
             border-radius: 99rem;
+            padding: 0;
+            font-family: "Noto Sans JP", sans-serif;
         }
         h4 {
             font-size: 1.1rem;
@@ -259,7 +321,7 @@ small {
         details.heading {
             margin-bottom: 1.8rem;
             > summary {
-                background-color: #202d5b;
+                background-color: #202c5b;
                 border-radius: 99rem;
                 padding: 0.5rem 1.2rem;
                 &::marker {
@@ -283,6 +345,7 @@ small {
 ul.list-inline {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     list-style: none;
     padding: 0;
     margin-bottom: 1rem;
@@ -349,15 +412,14 @@ ul.list-inline {
         background-size: 930px;
     }
     .header {
-        margin: 0 0 4rem;
-        background-size: 464.25px;
+        background-size: 500px;
     }
     .main-image {
         width: 70%;
-        margin-top: -2rem;
+        margin-top: -3rem;
     }
     .logo {
-        margin: 3rem auto 5rem;
+        margin: 2rem auto 4rem;
         width: 70%;
     }
     .about {
