@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&family=Noto+Sans+JP:wght@400;700&family=Palanquin+Dark&display=swap');
+
+html {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scrollbar-color: #202c5b #0e102f;
+}
+
+body {
+    background: #111a3e url(../image/background.png) repeat-x top;
+    background-size: 1860px;
+    background-attachment: fixed;
+    font-size: 0.95em;
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 2em;
+    letter-spacing: 0.08em;
+    line-break: strict;
+    color: #8caeff;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #8caeff;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #FFB860;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    padding-left: 1rem;
+    margin: 0;
+}
+
+address {
+    display: inline;
+    font-style: normal;
+}
+
+small {
+    line-height: 1;
+}
+
+.header {
+    margin: 0 0 5rem;
+    text-align: center;
+    background: url(../image/item.png) no-repeat top;
+    background-size: 928.5px;
+
+    &.header_simple {
+        background: none;
+
+        .logo {
+            margin: 4rem auto;
+            width: 300px;
+        }
+    }
+}
+
+.navigation {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    margin: 0 -0.5rem;
+
+    & > div {
+        margin: 0 0.5rem;
+    }
+
+    .localization {
+        margin: -0.2rem 0.5rem 0;
+    }
+
+    .circle-logo {
+        width: 110px;
+    }
+}
+
+
+.logo {
+    margin: 3rem auto 7rem;
+    width: 450px;
+}
+
+.main-image {
+    margin-top: -3rem;
+    width: 350px;
+}
+
+.about {
+    padding: 0 3rem;
+}
+
+.about .copy {
+    font-size: 1.1em;
+    font-family: 'Kiwi Maru', serif;
+    margin: 0 0 4.5rem;
+}
+
+.section_wrapper {
+    padding: 4.5rem 0;
+    background: transparent;
+
+    &:nth-child(even) {
+        padding: 4rem 0;
+        background-color: #0e102f;
+        position: relative;
+
+        &::before {
+            content: " ";
+            position: absolute;
+            top: -20px;
+            height: 20px;
+            width: 100%;
+            background: url(../image/section_line.png) repeat-x;
+            background-size: 20px;
+        }
+
+        &::after {
+            content: " ";
+            position: absolute;
+            bottom: -20px;
+            height: 20px;
+            width: 100%;
+            background: url(../image/section_line.png) repeat-x;
+            background-size: 20px;
+            transform: rotateZ(180deg);
+        }
+    }
+}
+
+.section {
+    max-width: 900px;
+    padding: 0 2rem;
+    margin: 0 auto;
+    text-align: center;
+
+    h2 {
+        position: relative;
+        display: inline-block;
+        font-family: 'Palanquin Dark';
+        font-size: 2em;
+        margin: 0 0 3rem;
+        padding: 1rem 1.7rem 1.2rem;
+        border-radius: 2rem;
+        color: #FFB860;
+        background-color: #202c5b;
+        letter-spacing: 0.11em;
+
+        &::before {
+            content: "▼";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -20px;
+            color: #202c5b;
+            font-size: 20px;
+        }
+    }
+
+    &.section_title {
+        text-align: center;
+
+        .text {
+            text-align: left;
+            display: inline-block;
+        }
+    }
+
+    &.section_store {
+        .link {
+            padding: 1.5rem 0 0;
+
+            h3 {
+                font-size: 1.4rem;
+                position: relative;
+                display: inline-block;
+                font-family: 'Palanquin Dark';
+                padding: 0.8rem 1.5rem 1rem;
+                border-radius: 2rem;
+                background-color: #202c5b;
+                letter-spacing: 0.11em;
+            }
+
+            ul {
+                margin: 0 auto;
+                word-wrap: break-word;
+                max-width: 100%;
+                list-style: none;
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+ul.list-inline {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+
+    li::before {
+        content: "/";
+        padding: 0 0.5rem;
+    }
+    li:first-child::before {
+        content: none;
+    }
+}
+
+.store-embed {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.iframe-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.yokaze-logo {
+    display: inline-block;
+    width: 250px;
+}
+
+.footer {
+    margin: 4rem 0 1rem;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+
+.br-show-sp {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .about {
+        padding: 0 2rem;
+    }
+    .br-hide-mp {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        font-size: 0.85em;
+        background-size: 930px;
+    }
+    .header {
+        margin: 0 0 4rem;
+        background-size: 464.25px;
+    }
+    .main-image {
+        width: 70%;
+        margin-top: -2rem;
+    }
+    .logo {
+        margin: 3rem auto 5rem;
+        width: 70%;
+    }
+    .about {
+        padding: 0 2rem;
+    }
+    .about .copy {
+        margin: 0 0 4rem;
+    }
+    .section {
+        padding: 0 1.5rem;
+        h2 {
+            font-size: 1.7em;
+            padding: 0.8rem 1.5rem 0.9rem;
+        }
+        &.section_trailer {
+            padding-right: 0;
+            padding-left: 0;
+        }
+        // &.section_screenshots ul li {
+        //     width: 48%;
+        // }
+        // &.section_screenshots ul li:nth-of-type(n + 9) {
+        //     display: none;
+        // }
+    }
+    .br-show-sp {
+        display: initial;
+    }
+}
