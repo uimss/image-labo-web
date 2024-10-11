@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  background: #111a3e url(../image/background.png) repeat-x top;
+  background: #111a3e url(../../../assets/image/background.png) repeat-x top;
   background-size: 1860px;
   background-attachment: fixed;
   font-size: 0.95em;
@@ -115,7 +115,7 @@ small {
   top: -20px;
   height: 20px;
   width: 100%;
-  background: url(../image/section_line.png) repeat-x;
+  background: url(../../../assets/image/section_line.png) repeat-x;
   background-size: 20px;
 }
 .section_wrapper:nth-child(even)::after {
@@ -124,7 +124,7 @@ small {
   bottom: -20px;
   height: 20px;
   width: 100%;
-  background: url(../image/section_line.png) repeat-x;
+  background: url(../../../assets/image/section_line.png) repeat-x;
   background-size: 20px;
   transform: rotateZ(180deg);
 }
