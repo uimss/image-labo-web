@@ -1,8 +1,8 @@
 :root {
-  --bg-color: #a3aec9;
-  --text-color: #6f678c;
-  --link-color: #ac7759;
-  --link-hover-color: #c78353;
+  --bg-color: #c0c8da;
+  --text-color: #4c9a84;
+  --link-color: #c98365;
+  --link-hover-color: #e68964;
 }
 
 html {
@@ -77,7 +77,7 @@ main {
 }
 
 .right-side {
-  flex-basis: 65%;
+  flex-basis: 50%;
   order: 2;
 }
 
@@ -89,7 +89,6 @@ section.notice p {
   margin: 0;
 }
 section.notice img {
-  box-shadow: 0 0 4px 4px rgba(50, 80, 150, 0.05);
   border-radius: 0.5rem;
 }
 
