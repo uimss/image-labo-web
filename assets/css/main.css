@@ -88,10 +88,6 @@ section {
 section.notice p {
   margin: 0;
 }
-section.notice img {
-  border-radius: 0.5rem;
-}
-
 section.links h2 {
   margin-top: 0;
   line-height: 1;
