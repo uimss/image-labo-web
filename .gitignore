@@ -1,0 +1,16 @@
+# Node dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Astro cache
+.astro/
+
+# Environment variables
+.env
+.env.*
+
+# other
+.DS_Store
+.vscode/
