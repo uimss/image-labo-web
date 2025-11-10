@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/uimss/image-labo-web#readme",
   "dependencies": {
-    "astro": "^5.15.4"
+    "astro": "^5.15.4",
+    "sass": "^1.93.3"
   }
 }
