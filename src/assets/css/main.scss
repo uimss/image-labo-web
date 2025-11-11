@@ -20,7 +20,7 @@ body {
     font-size: 0.9em;
     font-family: 'Noto Sans JP', sans-serif;
     line-height: 1.8em;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.05em;
     line-break: strict;
     color: var(--text-color);
     padding: 0;
@@ -39,7 +39,7 @@ a:hover {
     color: var(--link-hover-color);
 }
 
-img {
+img, svg {
     max-width: 100%;
 }
 

@@ -9,30 +9,41 @@ const Links = [
   { href: 'https://uimss.booth.pm/', title: 'Shop' },
 ];
 
-const { title } = Astro.props;
+const { title } = Astro.props.frontmatter || Astro.props;
 ---
 
 <style lang="scss">
   .layout-page {
     max-width: 800px;
-    padding: 3rem;
     margin: auto;
     text-align: center;
   }
   header {
-    margin-bottom: 2rem;
+    margin: 2rem 0;
+    a {
+      color: var(--text-color);
+      &:hover {
+        color: var(--link-hover-color);
+      }
+    }
+
+    .logo {
+      display: block;
+      margin-bottom: 1.1em;
+    }
   }
 
   nav ul {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
+    font-size: 1.1em;
   }
 </style>
 
 <BaseLayout title={title} class="layout-page">
   <header>
-    <a href="/"><Logo width={200} aria-label="Image Labo" fill="currentColor" /></a>
+    <a href="/" class="logo"><Logo width={200} aria-label="Image Labo" fill="currentColor" /></a>
     <nav>
       <ul>
         {
