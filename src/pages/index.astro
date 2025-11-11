@@ -1,26 +1,38 @@
 ---
-import Base from '../layouts/_base.astro';
+import BaseLayout from '../layouts/_base.astro';
 import Logo from '../assets/images/logo.svg';
+
 const Links = [
-  {href: './about', title: 'About'},
-  {href: './illustrations', title: 'Illustrations'},
-  {href: './games', title: 'Games'},
-  {href: 'https://uimss.booth.pm/', title: 'Shop'}
+  { href: './about', title: 'About' },
+  { href: './illustrations', title: 'Illustrations' },
+  { href: './games', title: 'Games' },
+  { href: 'https://uimss.booth.pm/', title: 'Shop' },
 ];
 ---
 
-<Base>
-  <div class="page-index">
-    <header>
-      <h1><Logo width={300} aria-label="Image Labo" fill="currentColor" /></h1>
-      <p>taiyaki shimesaba onsen town</p>
-    </header>
-    <main>
-      <ul>
-        {Links.map (link => (
-          <li><a href={link.href}>{link.title}</a></li>
-        ))}
-      </ul>
-    </main>
-  </div>
-</Base>
+<style lang="scss">
+  .layout-index {
+    max-width: 800px;
+    padding: 3rem;
+    margin: auto;
+    text-align: center;
+  }
+</style>
+
+<BaseLayout class="layout-index">
+  <header>
+    <h1><Logo width={300} aria-label="Image Labo" fill="currentColor" /></h1>
+    <p>taiyaki shimesaba onsen town</p>
+  </header>
+  <main>
+    <ul>
+      {
+        Links.map((link) => (
+          <li>
+            <a href={link.href}>{link.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</BaseLayout>

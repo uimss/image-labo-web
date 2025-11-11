@@ -1,0 +1,56 @@
+---
+import PageLayout from '../layouts/_page.astro';
+const Links = [
+  { href: 'https://twitter.com/uimss', title: 'X' },
+  { href: 'https://twitter.com/image_labo', title: 'X (Image Labo)' },
+  { href: 'https://bsky.app/profile/uimss.bsky.social', title: 'Bluesky' },
+  { href: 'https://www.pixiv.net/users/2143683', title: 'Pixiv' },
+  { href: 'https://www.youtube.com/@image-labo', title: 'YouTube' },
+];
+---
+
+<style>
+  .profile-icon-area {
+    /* display: flex; */
+    /* gap: 0 1rem; */
+    /* align-items: center; */
+  }
+
+  .profile-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0.7rem 0 0.3rem;
+  }
+
+  .profile-icon {
+    max-width: 60px;
+    border-radius: 50%;
+  }
+</style>
+
+<PageLayout title="About">
+  <div class="profile-icon-area">
+    <img src="assets/image/profile_icon.png" alt="Profile icon" class="profile-icon" />
+    <div class="profile-name">宇野山 むじ</div>
+  </div>
+  <p>ゲーム、絵、まんがなどを作っています</p>
+  <h3>Contact</h3>
+  <p>
+    <address><a href="mailto:uimss.imagelabo@gmail.com">uimss.imagelabo@gmail.com</a></address><br
+    />ご依頼は一時受付休止しています。2026年3月ごろ再開予定（知人・既知の方は都度ご相談ください）
+  </p>
+  <p>
+    <a href="https://wavebox.me/wave/6e2w4xepnw2kers4/">WaveBox</a><br />匿名の質問・ご感想などはこちら<br
+    />あるととても励みになります
+  </p>
+  <h3>Links</h3>
+  <ul>
+    {
+      Links.map((link) => (
+        <li>
+          <a href={link.href}>{link.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</PageLayout>
