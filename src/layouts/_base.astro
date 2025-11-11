@@ -1,0 +1,32 @@
+---
+import '../styles/main.scss';
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0LTT120NHR"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0LTT120NHR');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="taiyaki shimesaba onsen town">
+    <meta property="og:url" content="https://image-labo.com/" />
+    <meta property="og:title" content="Image Labo" />
+    <meta property="og:description" content="taiyaki shimesaba onsen town" />
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Image Labo" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@uimss" />
+    <title>Image Labo</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
