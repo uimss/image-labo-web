@@ -1,17 +1,18 @@
 ---
 import Base from '../layouts/_base.astro';
+import Logo from '../assets/images/logo.svg';
 const Links = [
   {href: './about', title: 'About'},
   {href: './illustrations', title: 'Illustrations'},
   {href: './games', title: 'Games'},
   {href: 'https://uimss.booth.pm/', title: 'Shop'}
-]
+];
 ---
 
 <Base>
   <div class="page-index">
     <header>
-      <h1>Image Labo</h1>
+      <h1><Logo width={300} aria-label="Image Labo" fill="currentColor" /></h1>
       <p>taiyaki shimesaba onsen town</p>
     </header>
     <main>
