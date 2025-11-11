@@ -1,7 +1,7 @@
 ---
 import PageLayout from '../layouts/_page.astro';
 
-const Links = [
+const links = [
   { href: 'https://twitter.com/uimss', title: 'X' },
   { href: 'https://twitter.com/image_labo', title: 'X (Image Labo)' },
   { href: 'https://bsky.app/profile/uimss.bsky.social', title: 'Bluesky' },
@@ -42,12 +42,13 @@ const Links = [
     2026年3月ごろ再開予定（知人・既知の方は都度ご相談ください）
   </p>
   <p>
-    <a href="https://wavebox.me/wave/6e2w4xepnw2kers4/">WaveBox</a><br />匿名の質問・ご感想などはこちら<br />あるととても励みになります
+    <a href="https://wavebox.me/wave/6e2w4xepnw2kers4/">WaveBox</a><br />匿名の質問・ご感想などはこちら<br
+    />あるととても励みになります
   </p>
   <h3>Links</h3>
   <ul>
     {
-      Links.map((link) => (
+      links.map((link) => (
         <li>
           <a href={link.href}>{link.title}</a>
         </li>

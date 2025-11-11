@@ -1,12 +1,137 @@
 ---
 import PageLayout from '../layouts/_page.astro';
+
+interface Game {
+  title: string;
+  image: string;
+  featured: boolean;
+  original: boolean;
+  description?: string;
+  links?: Link[];
+}
+interface Link {
+  title: string;
+  url: string;
+}
+
+const games: Game[] = [
+  {
+    title: 'Recolit',
+    image: 'recolit.png',
+    featured: true,
+    original: true,
+    description: 'ふつうの町の夜を歩く',
+  },
+  {
+    title: 'わだつみのこだま',
+    image: 'resonance_of_the_ocean.png',
+    featured: true,
+    original: true,
+    description: '海の向こうに「こだま」を返そう',
+  },
+  {
+    title: 'ステラーコード',
+    image: 'stellar_code.png',
+    featured: true,
+    original: false,
+    description: 'アートディレクションを担当しました',
+  },
+  {
+    title: 'トルービズの秘薬師',
+    image: 'trubiz.png',
+    featured: true,
+    original: false,
+    description: 'グラフィックを担当しました',
+  },
+  {
+    title: 'イハナシの魔女',
+    image: 'ihanashi.png',
+    featured: true,
+    original: false,
+    description: 'グラフィックを担当しました',
+  },
+];
 ---
+
+<style lang="scss">
+  .game-list {
+    display: flex;
+    // flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    article {
+      img {
+        max-width: 300px;
+        border-radius: 8px;
+      }
+    }
+  }
+</style>
 
 <PageLayout title="Games">
   <div>
-    ## Featured ### Original - Recolit（2024） - わだつみのこだま（2022） ### Collaborative - ステラーコード（2025） - トルービズの秘薬師（2025） -
-    イハナシの魔女（2022） ## More ### Original - かえすコトの葉もなし（2024） - Daily pet simulator（2023） - 春はやってこない（2020） ### Collaborative -
-    ねこの惑星（2024） - Electrogical（2024） - さかだちの街（2022） - コーヒーの香り、それから（2023） - 送電塔の上で、また会おう（2020） -
+    <h2>Featured</h2>
+    <div class="game-list">
+      {
+        games
+          .filter((game) => game.featured && game.original)
+          .map((game) => (
+            <article>
+              <img src={'/assets/image/game/' + game.image} />
+              <div>{game.title}</div>
+              <div>{game.release}</div>
+              <div>{game.description}</div>
+            </article>
+          ))
+      }
+    </div>
+    <div class="game-list">
+      {
+        games
+          .filter((game) => game.featured && !game.original)
+          .map((game) => (
+            <article>
+              <img src={'/assets/image/game/' + game.image} />
+              <div>{game.title}</div>
+              <div>{game.description}</div>
+            </article>
+          ))
+      }
+    </div>
+    <h2>Other</h2>
+    <div class="game-list">
+      {
+        games
+          .filter((game) => !game.featured && game.original)
+          .map((game) => (
+            <article>
+              <img src={'/assets/image/game/' + game.image} />
+              <div>{game.title}</div>
+              <div>{game.description}</div>
+            </article>
+          ))
+      }
+    </div>
+    <div class="game-list">
+      {
+        games
+          .filter((game) => !game.featured && !game.original)
+          .map((game) => (
+            <article>
+              <img src={'/assets/image/game/' + game.image} />
+              <div>{game.title}</div>
+              <div>{game.description}</div>
+            </article>
+          ))
+      }
+    </div>
+
+    ## Featured ### Original - Recolit（2024） - わだつみのこだま（2022） ### Collaborative - ステラーコード（2025） -
+    トルービズの秘薬師（2025） - イハナシの魔女（2022） ## More ### Original - かえすコトの葉もなし（2024） - Daily pet
+    simulator（2023） - 春はやってこない（2020） ### Collaborative - ねこの惑星（2024） - Electrogical（2024） -
+    さかだちの街（2022） - コーヒーの香り、それから（2023） - 送電塔の上で、また会おう（2020） -
     しょくもつれんさ・どうぶつえん（2020）
   </div>
 </PageLayout>
