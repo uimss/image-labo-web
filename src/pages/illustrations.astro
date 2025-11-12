@@ -1,13 +1,15 @@
 ---
-import PageLayout from '../layouts/_page.astro';
 import type { ImageMetadata } from 'astro';
+import PageLayout from '../layouts/_page.astro';
+
+import { illustrations } from '../data/illustrations';
+
 const pMatches = import.meta.glob<{ default: ImageMetadata }>('../assets/image/illustration/personal/*.{png,jpg}', {
   eager: true,
 });
 const cMatches = import.meta.glob<{ default: ImageMetadata }>('../assets/image/illustration/commissioned/*.{png,jpg}', {
   eager: true,
 });
-
 const [personalImages, commissionedImages] = [pMatches, cMatches].map((matches) =>
   Object.entries(matches).sort(([pathA], [pathB]) => {
     return PathToName(pathB).localeCompare(PathToName(pathA), 'en');
@@ -33,9 +35,9 @@ function PathToDisplayDate(path: string): string {
     line-height: 1.6;
 
     &-content {
-      width: 200px;
+      width: 220px;
       img {
-        aspect-ratio: 4 / 3;
+        aspect-ratio: 3 / 2;
         object-fit: cover;
         border-radius: var(--radius-default);
       }
@@ -62,9 +64,10 @@ function PathToDisplayDate(path: string): string {
   <h2>Commissioned</h2>
   <ul class="image-list">
     {
-      commissionedImages.map(([path, component]) => (
+      illustrations.map((illustration) => (
         <li class="image-list-content">
-          <img src={component.default.src} alt={path.split('/').pop()} />
+          <img src={cMatches['../assets/image/illustration/commissioned/' + illustration.image].default.src} />
+          <div class="image-list-info">{illustration.description}</div>
         </li>
       ))
     }
