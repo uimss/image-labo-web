@@ -9,7 +9,7 @@ import { games } from '../data/games';
   <GameList games={games.filter((game) => game.isFeatured && game.isDirection)} />
   <h2>Collaborative</h2>
   <GameList games={games.filter((game) => game.isFeatured && !game.isDirection)} />
-  <h2>Other</h2>
+  <h2>More</h2>
   <h3>Direction</h3>
   <GameList games={games.filter((game) => !game.isFeatured && game.isDirection)} isSmall={true} />
   <h3>Collaborative</h3>
