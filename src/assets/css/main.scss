@@ -1,5 +1,3 @@
-// ----------------------------------------base
-
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
 
 :root {
@@ -9,8 +7,11 @@
     --link-hover-color: #887263;
 }
 
-html {
+* {
     box-sizing: border-box;
+}
+
+html {
     padding: 0;
     margin: 0;
     scrollbar-color: var(--text-color) transparent;
@@ -26,7 +27,7 @@ body {
     padding: 0;
     margin: 0;
     background-color: var(--bg-color);
-    // border-top: 10px solid var(--text-color);
+    border-top: 10px solid var(--text-color);
 }
 
 a {
@@ -52,4 +53,8 @@ ul {
 address {
     display: inline;
     font-style: normal;
+}
+
+nav {
+    list-style: none;
 }

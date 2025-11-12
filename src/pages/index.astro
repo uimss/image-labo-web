@@ -4,12 +4,34 @@ import Logo from '../assets/images/logo.svg';
 import { navLinks } from '../data/navLinks';
 ---
 
+<style is:global>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+</style>
 <style lang="scss">
   .layout-index {
     max-width: 800px;
-    padding: 3rem;
     margin: auto;
     text-align: center;
+  }
+  header {
+    margin-bottom: 3rem;
+  }
+  nav {
+    font-size: 1rem;
+    li {
+      margin: 0.5rem 0;
+    }
+    a {
+      color: var(--text-color);
+      &:hover {
+        color: var(--link-hover-color);
+      }
+    }
   }
 </style>
 
@@ -19,14 +41,16 @@ import { navLinks } from '../data/navLinks';
     <p>taiyaki shimesaba onsen town</p>
   </header>
   <main>
-    <ul>
-      {
-        navLinks.map((link) => (
-          <li>
-            <a href={link.url}>{link.title}</a>
-          </li>
-        ))
-      }
-    </ul>
+    <nav>
+      <ul>
+        {
+          navLinks.map((link) => (
+            <li>
+              <a href={link.url}>{link.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
   </main>
 </BaseLayout>
