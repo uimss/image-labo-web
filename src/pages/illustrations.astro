@@ -1,10 +1,74 @@
 ---
 import PageLayout from '../layouts/_page.astro';
+import type { ImageMetadata } from 'astro';
+const pMatches = import.meta.glob<{ default: ImageMetadata }>('../assets/image/illustration/personal/*.{png,jpg}', {
+  eager: true,
+});
+const cMatches = import.meta.glob<{ default: ImageMetadata }>('../assets/image/illustration/commissioned/*.{png,jpg}', {
+  eager: true,
+});
+
+const [personalImages, commissionedImages] = [pMatches, cMatches].map((matches) =>
+  Object.entries(matches).sort(([pathA], [pathB]) => {
+    return PathToName(pathB).localeCompare(PathToName(pathA), 'en');
+  })
+);
+
+function PathToName(path: string): string {
+  return path.split('/').pop()!.split('.').slice(0, -1).join('.');
+}
+function PathToDisplayDate(path: string): string {
+  return PathToName(path).replace(/^(\d{4})(\d{2})(\d{2})$/, (_, y, m, d) => `${y}.${Number(m)}.${Number(d)}`);
+}
 ---
+
+<style lang="scss">
+  .image-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem 1rem;
+    margin-bottom: 2.5rem;
+    text-align: left;
+    line-height: 1.6;
+
+    &-content {
+      width: 200px;
+      img {
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: var(--radius-default);
+      }
+    }
+
+    &-info {
+      font-size: 0.75rem;
+    }
+  }
+</style>
 
 <PageLayout title="Illustrations">
   <h2>Personal</h2>
+  <ul class="image-list">
+    {
+      personalImages.map(([path, component]) => (
+        <li class="image-list-content">
+          <img src={component.default.src} alt={path.split('/').pop()} />
+          <div class="image-list-info">{PathToDisplayDate(path)}</div>
+        </li>
+      ))
+    }
+  </ul>
   <h2>Commissioned</h2>
+  <ul class="image-list">
+    {
+      commissionedImages.map(([path, component]) => (
+        <li class="image-list-content">
+          <img src={component.default.src} alt={path.split('/').pop()} />
+        </li>
+      ))
+    }
+  </ul>
   <h2>More</h2>
   <ul>
     <li><a href="https://uimss.tumblr.com/">Personal</a></li>
