@@ -2,55 +2,76 @@
 import PageLayout from '../layouts/_page.astro';
 
 const links = [
-  { href: 'https://twitter.com/uimss', title: 'X' },
-  { href: 'https://twitter.com/image_labo', title: 'X (Image Labo)' },
-  { href: 'https://bsky.app/profile/uimss.bsky.social', title: 'Bluesky' },
+  { href: 'https://twitter.com/uimss', title: 'X', description: 'お知らせ、絵など色々' },
+  { href: 'https://twitter.com/image_labo', title: 'X (Image Labo)', description: 'ゲーム関係のお知らせ' },
+  { href: 'https://bsky.app/profile/uimss.bsky.social', title: 'Bluesky', description: '生活' },
   { href: 'https://www.pixiv.net/users/2143683', title: 'Pixiv' },
   { href: 'https://www.youtube.com/@image-labo', title: 'YouTube' },
+  { href: 'https://note.com/uimss', title: 'note' },
 ];
 ---
 
-<style>
-  .profile-icon-area {
-    /* display: flex; */
-    /* gap: 0 1rem; */
-    /* align-items: center; */
+<style lang="scss">
+  .profile {
+    margin: 3rem 0;
+
+    &-name {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+    &-icon {
+      width: 60px;
+      border-radius: var(--radius-circle);
+    }
   }
 
-  .profile-name {
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin: 0.7rem 0 0.3rem;
-  }
+  .link-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: center;
+    gap: 1rem;
 
-  .profile-icon {
-    width: 60px;
-    border-radius: 50%;
+    &-content {
+      width: 160px;
+      a {
+        display: block;
+        border: 1px solid;
+        border-radius: var(--radius-max);
+        padding: 0.3rem 0;
+      }
+    }
+    &-description {
+      font-size: 0.8rem;
+    }
   }
 </style>
 
-<PageLayout title="About">
-  <div class="profile-icon-area">
+<PageLayout title="About" isSmall={true}>
+  <div class="profile">
     <img src="assets/image/profile_icon.png" alt="Profile icon" class="profile-icon" />
     <div class="profile-name">宇野山 むじ</div>
+    <div class="profile-description">ゲーム、絵、まれに漫画などを作っています</div>
   </div>
-  <p>ゲーム、絵、まれに漫画などを作っています</p>
-  <h3>Contact</h3>
+  <h2>Contact</h2>
   <p>
     <address><a href="mailto:uimss.imagelabo@gmail.com">uimss.imagelabo@gmail.com</a></address><br />
-    ご依頼は一時受付休止しています。<br />
+    ご依頼は一時受付休止しています<br />
     2026年3月ごろ再開予定（知人・既知の方は都度ご相談ください）
   </p>
   <p>
     <a href="https://wavebox.me/wave/6e2w4xepnw2kers4/">WaveBox</a><br />匿名の質問・ご感想などはこちら<br
     />あるととても励みになります
   </p>
-  <h3>Links</h3>
-  <ul>
+  <h2>Links</h2>
+  <ul class="link-list">
     {
       links.map((link) => (
-        <li>
+        <li class="link-list-content">
           <a href={link.href}>{link.title}</a>
+          {link.description && <div class="link-list-description">{link.description}</div>}
         </li>
       ))
     }

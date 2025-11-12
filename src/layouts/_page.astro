@@ -3,7 +3,12 @@ import BaseLayout from '../layouts/_base.astro';
 import Logo from '../assets/image/logo.svg';
 import { navLinks } from '../data/navLinks';
 
-const { title } = Astro.props.frontmatter || Astro.props;
+interface Props {
+  title: string;
+  isSmall?: boolean;
+}
+
+const { title, isSmall = false } = Astro.props;
 ---
 
 <style lang="scss">
@@ -12,9 +17,13 @@ const { title } = Astro.props.frontmatter || Astro.props;
     margin: auto;
     padding: 0 1rem;
     text-align: center;
+
+    &--small {
+      max-width: 640px;
+    }
   }
   header {
-    margin: 2rem 0;
+    margin: 3rem 0;
     a {
       color: var(--text-color);
       &:hover {
@@ -28,15 +37,19 @@ const { title } = Astro.props.frontmatter || Astro.props;
     }
   }
 
+  main {
+    margin: 3rem 0;
+  }
+
   nav ul {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    font-size: 1.1em;
+    font-size: 1rem;
   }
 </style>
 
-<BaseLayout title={title} class="layout-page">
+<BaseLayout title={title} class:list={['layout-page', { 'layout-page--small': isSmall }]}>
   <header>
     <a href="/" class="logo"><Logo width={200} aria-label="Image Labo" fill="currentColor" /></a>
     <nav>

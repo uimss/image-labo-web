@@ -5,6 +5,9 @@
   --text-color: #20538a;
   --link-color: #c08164;
   --link-hover-color: #887263;
+  --radius-default: 0.5rem;
+  --radius-max: 99rem;
+  --radius-circle: 50%;
 }
 
 * {
@@ -60,9 +63,6 @@ nav {
   list-style: none;
 }
 
-// h2 {
-//   max-width: 300px;
-//   border-bottom: 1px dotted;
-//   margin-left: auto;
-//   margin-right: auto;
-// }
+h2 {
+  font-size: 1.3rem;
+}
