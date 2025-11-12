@@ -1,0 +1,66 @@
+---
+import { Game } from '../data/games';
+
+interface Props {
+  games: Game[];
+  isSmall?: Boolean;
+}
+
+const { games, isSmall = false } = Astro.props;
+---
+
+<style lang="scss">
+  .game-list {
+    --width: 300px;
+    --title-size: 1rem;
+    --title-margin: 0.5rem 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem 1rem;
+    margin-bottom: 2.5rem;
+    text-align: left;
+    line-height: 1.6;
+
+    &-content {
+      width: var(--width);
+      img {
+        border-radius: 8px;
+      }
+    }
+    &-title {
+      font-weight: bold;
+      font-size: var(--title-size);
+      margin: var(--title-margin);
+    }
+    &-info {
+      font-size: 0.75rem;
+    }
+    &--small {
+      --width: 160px;
+      --title-size: 0.9rem;
+      --title-margin: 0.4rem 0;
+    }
+    &--small img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+  }
+</style>
+
+<div class:list={['game-list', { 'game-list--small': isSmall }]}>
+  {
+    games.map((game) => (
+      <article class="game-list-content">
+        <a href={game.url}>
+          <img src={'/assets/image/game/' + game.image} />
+        </a>
+        <div class="game-list-title">{game.title}</div>
+        <div class="game-list-info">
+          {[game.release, game.genre, game.platform, game.role].filter((param) => param != null).join(' / ')}
+        </div>
+      </article>
+    ))
+  }
+</div>
