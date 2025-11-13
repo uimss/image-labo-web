@@ -4,23 +4,30 @@ import PageLayout from '../layouts/_page.astro';
 
 import { illustrations } from '../data/illustrations';
 
-const pMatches = import.meta.glob<{ default: ImageMetadata }>('../assets/image/illustration/personal/*.{png,jpg}', {
-  eager: true,
-});
-const cMatches = import.meta.glob<{ default: ImageMetadata }>('../assets/image/illustration/commissioned/*.{png,jpg}', {
-  eager: true,
-});
-const [personalImages, commissionedImages] = [pMatches, cMatches].map((matches) =>
-  Object.entries(matches).sort(([pathA], [pathB]) => {
-    return PathToName(pathB).localeCompare(PathToName(pathA), 'en');
-  })
+const personalImageDict = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/image/illustration/personal/*.{png,jpg}',
+  {
+    eager: true,
+  }
 );
+const commissionedImageDict = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/image/illustration/commissioned/*.{png,jpg}',
+  {
+    eager: true,
+  }
+);
+const personalImages = Object.entries(personalImageDict).sort(([pathA], [pathB]) => {
+  return PathToName(pathB).localeCompare(PathToName(pathA), 'en');
+});
 
 function PathToName(path: string): string {
   return path.split('/').pop()!.split('.').slice(0, -1).join('.');
 }
 function PathToDisplayDate(path: string): string {
   return PathToName(path).replace(/^(\d{4})(\d{2})(\d{2})$/, (_, y, m, d) => `${y}.${Number(m)}.${Number(d)}`);
+}
+function GetCommissionedImage(filename: string): string {
+  return commissionedImageDict['../assets/image/illustration/commissioned/' + filename].default.src;
 }
 ---
 
@@ -46,20 +53,23 @@ function PathToDisplayDate(path: string): string {
         border-radius: var(--radius-default);
       }
     }
-    &-description {
-      margin: var(--title-margin);
-    }
-    &-info {
-      font-size: 0.75rem;
-    }
 
     &--small {
       --width: 160px;
       --title-size: 0.9rem;
       --title-margin: 0.4rem 0;
     }
-    &--small img {
+
+    &--small &-content img {
       aspect-ratio: 4 / 3;
+    }
+
+    &-description {
+      margin: var(--title-margin);
+    }
+
+    &-info {
+      font-size: 0.75rem;
     }
   }
 
@@ -85,10 +95,9 @@ function PathToDisplayDate(path: string): string {
     {
       illustrations.map((illustration) => (
         <li class="image-list-content">
-          <img src={cMatches['../assets/image/illustration/commissioned/' + illustration.image].default.src} />
+          <img src={GetCommissionedImage(illustration.image)} />
           <div class="image-list-description">
-            {illustration.description}
-            <br />
+            <div>{illustration.description}</div>
             <a href={illustration.url}>{illustration.url}</a>
           </div>
           <div class="image-list-info">{illustration.publishDate}</div>

@@ -10,6 +10,10 @@ interface Props {
 }
 
 const { games, isSmall = false } = Astro.props;
+
+function GetGameImage(filename: string): string {
+  return gameImages['../assets/image/game/' + filename].default.src;
+}
 ---
 
 <style lang="scss">
@@ -34,6 +38,17 @@ const { games, isSmall = false } = Astro.props;
         border-radius: var(--radius-default);
       }
     }
+
+    &--small {
+      --width: 160px;
+      --title-size: 0.9rem;
+      --title-margin: 0.4rem 0;
+    }
+
+    &--small &-content img {
+      aspect-ratio: 4 / 3;
+    }
+
     &-title {
       font-weight: bold;
       font-size: var(--title-size);
@@ -46,16 +61,9 @@ const { games, isSmall = false } = Astro.props;
         }
       }
     }
+
     &-info {
       font-size: 0.75rem;
-    }
-    &--small {
-      --width: 160px;
-      --title-size: 0.9rem;
-      --title-margin: 0.4rem 0;
-    }
-    &--small img {
-      aspect-ratio: 4 / 3;
     }
   }
 </style>
@@ -65,7 +73,7 @@ const { games, isSmall = false } = Astro.props;
     games.map((game) => (
       <article class="game-list-content">
         <a href={game.url}>
-          <img src={gameImages['../assets/image/game/' + game.image].default.src} />
+          <img src={GetGameImage(game.image)} />
         </a>
         <div class="game-list-title">
           <a href={game.url}>{game.title}</a>
