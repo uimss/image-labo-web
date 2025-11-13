@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import PageLayout from '../layouts/_page.astro';
 
@@ -25,8 +26,8 @@ function PathToName(path: string): string {
 function NameToDisplayDate(name: string): string {
   return name.replace(/^(\d{4})(\d{2})(\d{2})$/, (_, y, m, d) => `${y}.${Number(m)}.${Number(d)}`);
 }
-function GetCommissionedImage(filename: string): string {
-  return commissionedImageDict['../assets/image/illustration/commissioned/' + filename].default.src;
+function GetCommissionedImage(filename: string): ImageMetadata {
+  return commissionedImageDict['../assets/image/illustration/commissioned/' + filename].default;
 }
 ---
 
@@ -37,7 +38,7 @@ function GetCommissionedImage(filename: string): string {
       personalImages.map(([path, component]) => {
         const name = PathToName(path);
         return <li class="image-list-content">
-          <img src={component.default.src} alt={name} onclick={`showModal('modal-personal-${name}')`} />
+          <Image src={component.default} alt={name} onclick={`showModal('modal-personal-${name}')`} width={300} quality={95} />
           <div class="image-list-info">{NameToDisplayDate(name)}</div>
         </li>
         <div id={"modal-personal-" + name} hidden>
@@ -52,7 +53,7 @@ function GetCommissionedImage(filename: string): string {
       illustrations.map(illustration => {
         const name = illustration.image.split(".")[0];
         return <li class="image-list-content">
-          <img src={GetCommissionedImage(illustration.image)} onclick={`showModal('modal-commissioned-${name}')`} />
+          <Image src={GetCommissionedImage(illustration.image)} alt={name} onclick={`showModal('modal-commissioned-${name}')`} width={500} quality={95} />
           <div class="image-list-description">
             <div>{illustration.description}</div>
             <a href={illustration.url}>{illustration.url}</a>
@@ -60,7 +61,7 @@ function GetCommissionedImage(filename: string): string {
           <div class="image-list-info">{illustration.publishDate}</div>
         </li>
         <div id={"modal-commissioned-" + name} hidden>
-          <img class="modal-image" src={GetCommissionedImage(illustration.image)} alt={name} />
+          <img class="modal-image" src={GetCommissionedImage(illustration.image).src} alt={name} />
         </div>;
       })
     }
@@ -89,6 +90,8 @@ function GetCommissionedImage(filename: string): string {
     &-content {
       width: var(--width);
       img {
+        width: auto;
+        height: auto;
         aspect-ratio: 16 / 9;
         object-fit: cover;
         border-radius: var(--radius-default);
