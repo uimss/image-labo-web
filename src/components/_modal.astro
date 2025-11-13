@@ -1,0 +1,63 @@
+---
+
+---
+
+<style lang="scss">
+  .overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem 0;
+  }
+  .overlay.active {
+    display: flex;
+  }
+  .modal {
+    max-width: 1000px;
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.15s ease;
+  }
+</style>
+<style is:global>
+  img.modal-image {
+    max-width: min(100vw, 1000px);
+    max-height: calc(100vh - 2rem);
+    width: auto;
+    height: auto;
+  }
+</style>
+
+<div id="global-modal" class="overlay">
+  <div class="modal" id="modal-content"></div>
+</div>
+
+<script is:inline>
+  const overlay = document.getElementById('global-modal');
+  const modalContent = document.getElementById('modal-content');
+
+  window.showModal = id => {
+    modalContent.innerHTML = document.getElementById(id)?.innerHTML;
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.hideModal = () => {
+    overlay.classList.remove('active');
+    modalContent.innerHTML = '';
+    document.body.style.removeProperty('overflow');
+  };
+
+  overlay.addEventListener('click', e => {
+    if (e.target === overlay) hideModal();
+  });
+</script>

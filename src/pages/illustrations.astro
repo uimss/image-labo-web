@@ -16,15 +16,14 @@ const commissionedImageDict = import.meta.glob<{ default: ImageMetadata }>(
     eager: true,
   }
 );
-const personalImages = Object.entries(personalImageDict).sort(([pathA], [pathB]) => {
-  return PathToName(pathB).localeCompare(PathToName(pathA), 'en');
-});
+const personalImages = Object.entries(personalImageDict)
+  .sort(([pathA], [pathB]) => PathToName(pathB).localeCompare(PathToName(pathA), 'en'));
 
 function PathToName(path: string): string {
   return path.split('/').pop()!.split('.').slice(0, -1).join('.');
 }
-function PathToDisplayDate(path: string): string {
-  return PathToName(path).replace(/^(\d{4})(\d{2})(\d{2})$/, (_, y, m, d) => `${y}.${Number(m)}.${Number(d)}`);
+function NameToDisplayDate(name: string): string {
+  return name.replace(/^(\d{4})(\d{2})(\d{2})$/, (_, y, m, d) => `${y}.${Number(m)}.${Number(d)}`);
 }
 function GetCommissionedImage(filename: string): string {
   return commissionedImageDict['../assets/image/illustration/commissioned/' + filename].default.src;
@@ -51,6 +50,12 @@ function GetCommissionedImage(filename: string): string {
         aspect-ratio: 16 / 9;
         object-fit: cover;
         border-radius: var(--radius-default);
+
+        &:hover {
+          cursor: pointer;
+          opacity: 0.9;
+          filter:brightness(1.1);
+        }
       }
     }
 
@@ -69,6 +74,8 @@ function GetCommissionedImage(filename: string): string {
     }
 
     &-info {
+      margin: var(--title-margin);
+      margin-bottom: 0;
       font-size: 0.75rem;
     }
   }
@@ -82,27 +89,35 @@ function GetCommissionedImage(filename: string): string {
   <h2>Personal</h2>
   <ul class="image-list image-list--small">
     {
-      personalImages.map(([path, component]) => (
-        <li class="image-list-content">
-          <img src={component.default.src} alt={path.split('/').pop()} />
-          <div class="image-list-info">{PathToDisplayDate(path)}</div>
+      personalImages.map(([path, component]) => {
+        const name = PathToName(path);
+        return <li class="image-list-content">
+          <img src={component.default.src} alt={name} onclick={`showModal('modal-personal-${name}')`} />
+          <div class="image-list-info">{NameToDisplayDate(name)}</div>
         </li>
-      ))
+        <div id={"modal-personal-" + name} hidden>
+          <img class="modal-image" src={component.default.src} alt={name} />
+        </div>;
+      })
     }
   </ul>
   <h2>Commissioned</h2>
   <ul class="image-list">
     {
-      illustrations.map((illustration) => (
-        <li class="image-list-content">
-          <img src={GetCommissionedImage(illustration.image)} />
+      illustrations.map(illustration => {
+        const name = illustration.image.split(".")[0];
+        return <li class="image-list-content">
+          <img src={GetCommissionedImage(illustration.image)} onclick={`showModal('modal-commissioned-${name}')`} />
           <div class="image-list-description">
             <div>{illustration.description}</div>
             <a href={illustration.url}>{illustration.url}</a>
           </div>
           <div class="image-list-info">{illustration.publishDate}</div>
         </li>
-      ))
+        <div id={"modal-commissioned-" + name} hidden>
+          <img class="modal-image" src={GetCommissionedImage(illustration.image)} alt={name} />
+        </div>;
+      })
     }
   </ul>
   <h2>More</h2>

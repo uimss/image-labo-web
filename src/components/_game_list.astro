@@ -36,6 +36,12 @@ function GetGameImage(filename: string): string {
         aspect-ratio: 16 / 9;
         object-fit: cover;
         border-radius: var(--radius-default);
+
+        &:hover {
+          cursor: pointer;
+          opacity: 0.9;
+          filter: brightness(1.1);
+        }
       }
     }
 
@@ -70,7 +76,7 @@ function GetGameImage(filename: string): string {
 
 <div class:list={['game-list', { 'game-list--small': isSmall }]}>
   {
-    games.map((game) => (
+    games.map(game => (
       <article class="game-list-content">
         <a href={game.url}>
           <img src={GetGameImage(game.image)} />
@@ -80,7 +86,7 @@ function GetGameImage(filename: string): string {
         </div>
         <div class="game-list-info">
           {game.role && <div>{game.role}</div>}
-          {[game.publishDate, game.genre, game.platform].filter((param) => param != null).join(' / ')}
+          {[game.publishDate, game.genre, game.platform].filter(param => param != null).join(' / ')}
         </div>
       </article>
     ))

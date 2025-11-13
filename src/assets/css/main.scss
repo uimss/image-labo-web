@@ -48,6 +48,7 @@ a:hover {
 img,
 svg {
   max-width: 100%;
+  vertical-align:top; // line-heightによる余白削る用
 }
 
 ul {
