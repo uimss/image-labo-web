@@ -29,6 +29,13 @@ const { title, class: className, ...rest } = Astro.props;
     <meta property="og:locale" content="ja_JP" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@uimss" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,700,0,0&icon_names=open_in_new"
+    />
     <title>{title ? `${title} | ${siteName}` : siteName}</title>
   </head>
   <body>

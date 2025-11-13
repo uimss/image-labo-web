@@ -30,6 +30,48 @@ function GetCommissionedImage(filename: string): string {
 }
 ---
 
+<PageLayout title="Illustrations">
+  <h2>Personal</h2>
+  <ul class="image-list image-list--small">
+    {
+      personalImages.map(([path, component]) => {
+        const name = PathToName(path);
+        return <li class="image-list-content">
+          <img src={component.default.src} alt={name} onclick={`showModal('modal-personal-${name}')`} />
+          <div class="image-list-info">{NameToDisplayDate(name)}</div>
+        </li>
+        <div id={"modal-personal-" + name} hidden>
+          <img class="modal-image" src={component.default.src} alt={name} />
+        </div>;
+      })
+    }
+  </ul>
+  <h2>Commissioned</h2>
+  <ul class="image-list">
+    {
+      illustrations.map(illustration => {
+        const name = illustration.image.split(".")[0];
+        return <li class="image-list-content">
+          <img src={GetCommissionedImage(illustration.image)} onclick={`showModal('modal-commissioned-${name}')`} />
+          <div class="image-list-description">
+            <div>{illustration.description}</div>
+            <a href={illustration.url}>{illustration.url}</a>
+          </div>
+          <div class="image-list-info">{illustration.publishDate}</div>
+        </li>
+        <div id={"modal-commissioned-" + name} hidden>
+          <img class="modal-image" src={GetCommissionedImage(illustration.image)} alt={name} />
+        </div>;
+      })
+    }
+  </ul>
+  <h2>More</h2>
+  <ul class="more-links">
+    <li><a href="https://uimss.tumblr.com/">Personal</a></li>
+    <li><a href="https://uimss-works.tumblr.com/">Commissioned</a></li>
+  </ul>
+</PageLayout>
+
 <style lang="scss">
   .image-list {
     --width: 300px;
@@ -81,48 +123,19 @@ function GetCommissionedImage(filename: string): string {
   }
 
   .more-links {
-    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    a {
+      display: block;
+      width: 200px;
+      font-size: 1rem;
+      border: 1px solid;
+      border-radius: var(--radius-max);
+      padding: 0.3rem 0;
+    }
   }
 </style>
-
-<PageLayout title="Illustrations">
-  <h2>Personal</h2>
-  <ul class="image-list image-list--small">
-    {
-      personalImages.map(([path, component]) => {
-        const name = PathToName(path);
-        return <li class="image-list-content">
-          <img src={component.default.src} alt={name} onclick={`showModal('modal-personal-${name}')`} />
-          <div class="image-list-info">{NameToDisplayDate(name)}</div>
-        </li>
-        <div id={"modal-personal-" + name} hidden>
-          <img class="modal-image" src={component.default.src} alt={name} />
-        </div>;
-      })
-    }
-  </ul>
-  <h2>Commissioned</h2>
-  <ul class="image-list">
-    {
-      illustrations.map(illustration => {
-        const name = illustration.image.split(".")[0];
-        return <li class="image-list-content">
-          <img src={GetCommissionedImage(illustration.image)} onclick={`showModal('modal-commissioned-${name}')`} />
-          <div class="image-list-description">
-            <div>{illustration.description}</div>
-            <a href={illustration.url}>{illustration.url}</a>
-          </div>
-          <div class="image-list-info">{illustration.publishDate}</div>
-        </li>
-        <div id={"modal-commissioned-" + name} hidden>
-          <img class="modal-image" src={GetCommissionedImage(illustration.image)} alt={name} />
-        </div>;
-      })
-    }
-  </ul>
-  <h2>More</h2>
-  <ul class="more-links">
-    <li><a href="https://uimss.tumblr.com/">Personal</a></li>
-    <li><a href="https://uimss-works.tumblr.com/">Commissioned</a></li>
-  </ul>
-</PageLayout>

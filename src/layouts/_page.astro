@@ -11,6 +11,26 @@ interface Props {
 const { title, isSmall = false } = Astro.props;
 ---
 
+<BaseLayout title={title} class:list={['layout-page', { 'layout-page--small': isSmall }]}>
+  <header>
+    <a href="/" class="logo"><Logo width={200} aria-label="Image Labo" fill="currentColor" /></a>
+    <nav>
+      <ul>
+        {
+          navLinks.map(link => (
+            <li>
+              <a href={link.url}>{link.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <slot />
+  </main>
+</BaseLayout>
+
 <style lang="scss">
   .layout-page {
     max-width: 1000px;
@@ -48,23 +68,3 @@ const { title, isSmall = false } = Astro.props;
     font-size: 1rem;
   }
 </style>
-
-<BaseLayout title={title} class:list={['layout-page', { 'layout-page--small': isSmall }]}>
-  <header>
-    <a href="/" class="logo"><Logo width={200} aria-label="Image Labo" fill="currentColor" /></a>
-    <nav>
-      <ul>
-        {
-          navLinks.map((link) => (
-            <li>
-              <a href={link.url}>{link.title}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <slot />
-  </main>
-</BaseLayout>

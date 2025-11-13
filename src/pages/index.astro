@@ -4,6 +4,26 @@ import Logo from '../assets/image/logo.svg';
 import { navLinks } from '../data/navLinks';
 ---
 
+<BaseLayout class="layout-index">
+  <header>
+    <h1><Logo width={300} aria-label="Image Labo" fill="currentColor" /></h1>
+    <p>taiyaki shimesaba onsen town</p>
+  </header>
+  <main>
+    <nav>
+      <ul>
+        {
+          navLinks.map(link => (
+            <li>
+              <a href={link.url}>{link.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </main>
+</BaseLayout>
+
 <style is:global>
   body {
     display: flex;
@@ -34,23 +54,3 @@ import { navLinks } from '../data/navLinks';
     }
   }
 </style>
-
-<BaseLayout class="layout-index">
-  <header>
-    <h1><Logo width={300} aria-label="Image Labo" fill="currentColor" /></h1>
-    <p>taiyaki shimesaba onsen town</p>
-  </header>
-  <main>
-    <nav>
-      <ul>
-        {
-          navLinks.map((link) => (
-            <li>
-              <a href={link.url}>{link.title}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
-  </main>
-</BaseLayout>
