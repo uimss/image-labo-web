@@ -71,6 +71,14 @@ function GetGameImage(filename: string): string {
     &-info {
       font-size: 0.75rem;
     }
+
+    @media screen and (max-width: 600px) {
+      --width: calc(100% - 1rem);
+
+      &--small {
+        --width: calc((100% - 2rem) / 2);
+      }
+    }
   }
 </style>
 

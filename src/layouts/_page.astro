@@ -18,7 +18,7 @@ const { title, isSmall = false } = Astro.props;
       <ul>
         {
           navLinks.map(link => (
-            <li>
+            <li class={Astro.url.pathname.startsWith(link.url) ? 'active' : ''}>
               <a href={link.url}>{link.title}</a>
             </li>
           ))
@@ -66,5 +66,11 @@ const { title, isSmall = false } = Astro.props;
     justify-content: center;
     gap: 1rem;
     font-size: 1rem;
+    li.active {
+      border-bottom: 1px solid;
+      a {
+        color: inherit;
+      }
+    }
   }
 </style>

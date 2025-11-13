@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../layouts/_page.astro';
+import profileIcon from '../assets/image/profile_icon.png';
 
 const links = [
   { href: 'https://twitter.com/uimss', title: 'X', description: 'お知らせ、絵など色々' },
@@ -13,7 +14,7 @@ const links = [
 
 <PageLayout title="About" isSmall={true}>
   <div class="profile">
-    <img src="assets/image/profile_icon.png" alt="Profile icon" class="profile-icon" />
+    <img src={profileIcon.src} alt="Profile icon" class="profile-icon" />
     <div class="profile-name">宇野山 むじ</div>
     <div class="profile-description">ゲーム、絵、まれに漫画などを作っています</div>
   </div>
