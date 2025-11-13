@@ -26,6 +26,10 @@ function PathToDisplayDate(path: string): string {
 
 <style lang="scss">
   .image-list {
+    --width: 300px;
+    --title-size: 1rem;
+    --title-margin: 0.5rem 0;
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -35,23 +39,38 @@ function PathToDisplayDate(path: string): string {
     line-height: 1.6;
 
     &-content {
-      width: 220px;
+      width: var(--width);
       img {
-        aspect-ratio: 3 / 2;
+        aspect-ratio: 16 / 9;
         object-fit: cover;
         border-radius: var(--radius-default);
       }
     }
-
+    &-description {
+      margin: var(--title-margin);
+    }
     &-info {
       font-size: 0.75rem;
     }
+
+    &--small {
+      --width: 160px;
+      --title-size: 0.9rem;
+      --title-margin: 0.4rem 0;
+    }
+    &--small img {
+      aspect-ratio: 4 / 3;
+    }
+  }
+
+  .more-links {
+    font-size: 1rem;
   }
 </style>
 
 <PageLayout title="Illustrations">
   <h2>Personal</h2>
-  <ul class="image-list">
+  <ul class="image-list image-list--small">
     {
       personalImages.map(([path, component]) => (
         <li class="image-list-content">
@@ -67,13 +86,18 @@ function PathToDisplayDate(path: string): string {
       illustrations.map((illustration) => (
         <li class="image-list-content">
           <img src={cMatches['../assets/image/illustration/commissioned/' + illustration.image].default.src} />
-          <div class="image-list-info">{illustration.description}</div>
+          <div class="image-list-description">
+            {illustration.description}
+            <br />
+            <a href={illustration.url}>{illustration.url}</a>
+          </div>
+          <div class="image-list-info">{illustration.publishDate}</div>
         </li>
       ))
     }
   </ul>
   <h2>More</h2>
-  <ul>
+  <ul class="more-links">
     <li><a href="https://uimss.tumblr.com/">Personal</a></li>
     <li><a href="https://uimss-works.tumblr.com/">Commissioned</a></li>
   </ul>

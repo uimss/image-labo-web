@@ -5,7 +5,7 @@ interface Link {
 
 export const navLinks: Link[] = [
   { url: '/about', title: 'About' },
-  { url: '/illustrations', title: 'Illustrations' },
   { url: '/games', title: 'Games' },
+  { url: '/illustrations', title: 'Illustrations' },
   { url: 'https://uimss.booth.pm/', title: 'Shop' },
 ];

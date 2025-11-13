@@ -29,6 +29,7 @@ body {
   line-height: 1.8;
   letter-spacing: 0.05em;
   line-break: strict;
+  overflow-wrap: break-word;
   color: var(--text-color);
   background-color: var(--bg-color);
   border-top: 10px solid var(--text-color);
