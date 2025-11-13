@@ -13,7 +13,7 @@ export interface Game {
 export const games: Game[] = [
   {
     title: 'Recolit',
-    image: 'recolit.png',
+    image: 'recolit.jpg',
     isFeatured: true,
     isDirection: true,
     url: '/recolit/',
@@ -23,7 +23,7 @@ export const games: Game[] = [
   },
   {
     title: 'わだつみのこだま',
-    image: 'resonance_of_the_ocean.png',
+    image: 'resonance_of_the_ocean.jpg',
     isFeatured: true,
     isDirection: true,
     url: 'https://store.steampowered.com/app/2057080/_/',
@@ -33,7 +33,7 @@ export const games: Game[] = [
   },
   {
     title: 'トルービズの秘薬師',
-    image: 'trubiz.png',
+    image: 'trubiz.jpg',
     isFeatured: true,
     isDirection: false,
     role: 'グラフィック担当',
@@ -44,7 +44,7 @@ export const games: Game[] = [
   },
   {
     title: 'ステラーコード',
-    image: 'stellar_code.png',
+    image: 'stellar_code.jpg',
     isFeatured: true,
     isDirection: false,
     role: 'アートディレクション担当',
@@ -55,7 +55,7 @@ export const games: Game[] = [
   },
   {
     title: 'イハナシの魔女',
-    image: 'ihanashi.png',
+    image: 'ihanashi.jpg',
     isFeatured: true,
     isDirection: false,
     role: 'グラフィック担当',
@@ -66,7 +66,7 @@ export const games: Game[] = [
   },
   {
     title: 'かえすコトの葉もなし',
-    image: 'kotonoha.png',
+    image: 'kotonoha.jpg',
     isFeatured: false,
     isDirection: true,
     url: 'https://unityroom.com/games/kaesu-kotonoha',
@@ -76,7 +76,7 @@ export const games: Game[] = [
   },
   {
     title: 'Daily pet simulator',
-    image: 'daily_pet_simulator.png',
+    image: 'daily_pet_simulator.jpg',
     isFeatured: false,
     isDirection: true,
     url: 'https://unityroom.com/games/daily_pet_simulator',
@@ -86,7 +86,7 @@ export const games: Game[] = [
   },
   {
     title: '春はやってこない',
-    image: 'spring_is_not_coming.png',
+    image: 'spring_is_not_coming.jpg',
     isFeatured: false,
     isDirection: true,
     url: 'https://unityroom.com/games/spring_is_not_coming',
@@ -96,7 +96,7 @@ export const games: Game[] = [
   },
   {
     title: 'ねこの惑星',
-    image: 'neko_planet.png',
+    image: 'neko_planet.jpg',
     isFeatured: false,
     isDirection: false,
     role: 'グラフィック担当',
@@ -107,7 +107,7 @@ export const games: Game[] = [
   },
   {
     title: 'Electrogical',
-    image: 'electrogical.png',
+    image: 'electrogical.jpg',
     isFeatured: false,
     isDirection: false,
     role: 'キービジュアル等、一部グラフィック担当',
@@ -118,7 +118,7 @@ export const games: Game[] = [
   },
   {
     title: 'ルミナリリック',
-    image: 'lumina.png',
+    image: 'lumina.jpg',
     isFeatured: false,
     isDirection: false,
     role: '立ち絵イラスト担当',
@@ -129,7 +129,7 @@ export const games: Game[] = [
   },
   {
     title: 'コーヒーの香り、それから',
-    image: 'coffee_dog.png',
+    image: 'coffee_dog.jpg',
     isFeatured: false,
     isDirection: false,
     role: 'グラフィック担当',
@@ -140,7 +140,7 @@ export const games: Game[] = [
   },
   {
     title: 'さかだちの街',
-    image: 'invercity.png',
+    image: 'invercity.jpg',
     isFeatured: false,
     isDirection: false,
     role: '立ち絵等、一部グラフィック担当',
@@ -151,7 +151,7 @@ export const games: Game[] = [
   },
   {
     title: '送電塔の上で、また会おう',
-    image: 'soudento.png',
+    image: 'soudento.jpg',
     isFeatured: false,
     isDirection: false,
     role: 'グラフィック担当',
@@ -162,7 +162,7 @@ export const games: Game[] = [
   },
   {
     title: 'しょくもつれんさ・どうぶつえん',
-    image: 'shokumotsu_rensa.png',
+    image: 'shokumotsu_rensa.jpg',
     isFeatured: false,
     isDirection: false,
     role: 'グラフィック担当',
