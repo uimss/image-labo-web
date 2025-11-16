@@ -11,7 +11,7 @@ interface Props {
 const { title, isSmall = false } = Astro.props;
 ---
 
-<BaseLayout title={title} class:list={['layout-page', { 'layout-page--small': isSmall }]}>
+<BaseLayout title={title} class="layout-page">
   <header>
     <a href="/" class="logo"><Logo width={200} aria-label="Image Labo" fill="currentColor" /></a>
     <nav>
@@ -26,21 +26,15 @@ const { title, isSmall = false } = Astro.props;
       </ul>
     </nav>
   </header>
-  <main>
+  <main class={isSmall ? 'small' : ''}>
     <slot />
   </main>
 </BaseLayout>
 
 <style lang="scss">
   .layout-page {
-    max-width: 1000px;
-    margin: auto;
     padding: 0 1rem;
     text-align: center;
-
-    &--small {
-      max-width: 640px;
-    }
   }
   header {
     margin: 3rem 0;
@@ -58,7 +52,12 @@ const { title, isSmall = false } = Astro.props;
   }
 
   main {
-    margin: 3rem 0;
+    margin: 3rem auto;
+    max-width: 1000px;
+
+    &.small {
+      max-width: 640px;
+    }
   }
 
   nav ul {
