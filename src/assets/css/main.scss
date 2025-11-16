@@ -8,7 +8,9 @@
   --radius-circle: 50%;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -34,8 +36,11 @@ body {
   border-top: 10px solid var(--text-color);
 }
 
-button {
-  font-family: 'Noto Sans JP', sans-serif;
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
 }
 
 a {
