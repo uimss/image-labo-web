@@ -16,6 +16,25 @@ function GetGameImage(filename: string): string {
 }
 ---
 
+<div class:list={['game-list', { 'game-list--small': isSmall }]}>
+  {
+    games.map(game => (
+      <article class="game-list-content">
+        <a href={game.url}>
+          <img src={GetGameImage(game.image)} />
+        </a>
+        <div class="game-list-title">
+          <a href={game.url}>{game.title}</a>
+        </div>
+        <div class="game-list-info">
+          {game.role && <div>{game.role}</div>}
+          {[game.publishDate, game.genre, game.platform].filter(param => param != null).join(' / ')}
+        </div>
+      </article>
+    ))
+  }
+</div>
+
 <style lang="scss">
   .game-list {
     --width: 300px;
@@ -83,22 +102,3 @@ function GetGameImage(filename: string): string {
     }
   }
 </style>
-
-<div class:list={['game-list', { 'game-list--small': isSmall }]}>
-  {
-    games.map(game => (
-      <article class="game-list-content">
-        <a href={game.url}>
-          <img src={GetGameImage(game.image)} />
-        </a>
-        <div class="game-list-title">
-          <a href={game.url}>{game.title}</a>
-        </div>
-        <div class="game-list-info">
-          {game.role && <div>{game.role}</div>}
-          {[game.publishDate, game.genre, game.platform].filter(param => param != null).join(' / ')}
-        </div>
-      </article>
-    ))
-  }
-</div>
