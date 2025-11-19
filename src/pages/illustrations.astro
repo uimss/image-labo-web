@@ -6,19 +6,19 @@ import PageLayout from '../layouts/_page.astro';
 import { illustrations } from '../data/illustrations';
 
 const personalImageDict = import.meta.glob<{ default: ImageMetadata }>(
-  '../assets/image/illustration/personal/*.{png,jpg}',
+  '../assets/image/illustration/personal/*.{png,jpg,webp}',
   {
     eager: true,
   }
 );
 const commissionedImageDict = import.meta.glob<{ default: ImageMetadata }>(
-  '../assets/image/illustration/commissioned/*.{png,jpg}',
+  '../assets/image/illustration/commissioned/*.{png,jpg,webp}',
   {
     eager: true,
   }
 );
 const personalImages = Object.entries(personalImageDict)
-  .sort(([pathA], [pathB]) => PathToName(pathB).localeCompare(PathToName(pathA), 'en'));
+  .sort(([pathA], [pathB]) => PathToName(pathB).localeCompare(PathToName(pathA), 'en'))
 
 function PathToName(path: string): string {
   return path.split('/').pop()!.split('.').slice(0, -1).join('.');
@@ -35,7 +35,7 @@ function GetCommissionedImage(filename: string): ImageMetadata {
   <h2>Personal</h2>
   <ul class="image-list image-list--small">
     {
-      personalImages.map(([path, component]) => {
+      personalImages.slice(0,10).map(([path, component]) => {
         const name = PathToName(path);
         return <li class="image-list-content">
           <Image src={component.default} alt={name} onclick={`showModal('modal-personal-${name}')`} width={300} quality={95} />
@@ -50,7 +50,7 @@ function GetCommissionedImage(filename: string): ImageMetadata {
   <h2>Commissioned</h2>
   <ul class="image-list">
     {
-      illustrations.map(illustration => {
+      illustrations.slice(0,6).map(illustration => {
         const name = illustration.image.split(".")[0];
         return <li class="image-list-content">
           <Image src={GetCommissionedImage(illustration.image)} alt={name} onclick={`showModal('modal-commissioned-${name}')`} width={500} quality={95} />
