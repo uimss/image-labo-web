@@ -53,6 +53,16 @@ a:hover {
   color: var(--link-hover-color);
 }
 
+a.link-plane {
+  color: var(--text-color);
+  text-decoration: underline;
+  font-weight: normal;
+
+  &:hover {
+    color: var(--link-hover-color);
+  }
+}
+
 img,
 svg {
   max-width: 100%;
