@@ -95,6 +95,16 @@ export const games: Game[] = [
     platform: 'unityroom',
   },
   {
+    title: '燃やすものらのゆくすゑと',
+    image: 'moyasu.jpg',
+    isFeatured: false,
+    isDirection: false,
+    url: 'https://unityroom.com/games/otakiage',
+    publishDate: '2025',
+    genre: 'シミュレーション',
+    platform: 'unityroom',
+  },
+  {
     title: 'ねこの惑星',
     image: 'neko_planet.jpg',
     isFeatured: false,
