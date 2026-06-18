@@ -7,6 +7,18 @@ export interface Illustration {
 
 export const illustrations: Illustration[] = [
   {
+    image: 'shakuisha_202604.webp',
+    description: '借威社「sun room」 - ジャケットイラスト',
+    publishDate: '2026.6.17',
+    url: 'https://lnk.to/sunroom',
+  },
+  {
+    image: 'yokaze_202602.webp',
+    description: 'インディーゲーム 映像番組『ヨカゼナイト』2026 - キービジュアル',
+    publishDate: '2026.5.14',
+    url: 'https://youtu.be/qQoWbdxFBBg',
+  },
+  {
     image: 'tsukinoyo_202505.jpg',
     description: '月の夜、izu「バブル」（Cover） - MVイラスト',
     publishDate: '2025.9.26',
