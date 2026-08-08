@@ -7,6 +7,24 @@ export interface Illustration {
 
 export const illustrations: Illustration[] = [
   {
+    image: 'kitsudue_202606.webp',
+    description: 'キツヅエ「やりかた (feat.Euhi)」 - MVアニメーション',
+    publishDate: '2026.7.26',
+    url: 'https://youtu.be/_tORz0rIqSo',
+  },
+  {
+    image: 'shakuisha_202605.webp',
+    description: '借威社「pause」 - ジャケットイラスト',
+    publishDate: '2026.7.22',
+    url: 'https://lnk.to/shakuisha.pause',
+  },
+  {
+    image: 'douwa.webp',
+    description: '電ǂ鯨「童話になったらいいのに」 - MVの一部イラスト、背景',
+    publishDate: '2026.7.7',
+    url: 'https://youtu.be/O0bvnyGPdFM',
+  },
+  {
     image: 'shakuisha_202604.webp',
     description: '借威社「sun room」 - ジャケットイラスト',
     publishDate: '2026.6.17',
