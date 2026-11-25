@@ -20,7 +20,7 @@ export const illustrations: Illustration[] = [
   },
   {
     image: 'douwa.webp',
-    description: '電ǂ鯨「童話になったらいいのに」 - MVの一部イラスト、背景',
+    description: '電ǂ鯨「童話になったらいいのに」 - MV一部イラスト、背景',
     publishDate: '2026.7.7',
     url: 'https://youtu.be/O0bvnyGPdFM',
   },
@@ -29,6 +29,12 @@ export const illustrations: Illustration[] = [
     description: '借威社「sun room」 - ジャケットイラスト',
     publishDate: '2026.6.17',
     url: 'https://lnk.to/sunroom',
+  },
+  {
+    image: 'achabox_202604.webp',
+    description: 'ゲーム「シュレディンガーズ・コール」 - リリース記念イラスト',
+    publishDate: '2026.5.24',
+    url: 'https://shueisha-games.com/games/schrodingers-call/',
   },
   {
     image: 'yokaze_202602.webp',

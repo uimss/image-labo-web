@@ -56,9 +56,11 @@ function GetCommissionedImage(filename: string): ImageMetadata {
           <Image src={GetCommissionedImage(illustration.image)} alt={name} onclick={`showModal('modal-commissioned-${name}')`} width={500} quality={95} />
           <div class="image-list-description">
             <div>{illustration.description}</div>
-            <a href={illustration.url}>{illustration.url}</a>
           </div>
-          <div class="image-list-info">{illustration.publishDate}</div>
+          <div class="image-list-info">
+            <a href={illustration.url}>{illustration.url}</a>
+            {illustration.publishDate}
+          </div>
         </li>
         <div id={"modal-commissioned-" + name} hidden>
           <img class="modal-image" src={GetCommissionedImage(illustration.image).src} alt={name} />
@@ -122,6 +124,15 @@ function GetCommissionedImage(filename: string): ImageMetadata {
       margin: var(--title-margin);
       margin-bottom: 0;
       font-size: 0.75rem;
+
+      & a {
+        display: block;
+        max-width: 90%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-weight: normal;
+      }
     }
 
     @media screen and (max-width: 600px) {
